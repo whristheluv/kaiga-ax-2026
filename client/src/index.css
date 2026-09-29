@@ -1,0 +1,524 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Cruip & KAIGA Identity Palette */
+  --color-brand-purple: #6800ad;
+  --color-brand-purple-dark: #500085;
+  --color-brand-purple-light: #8318cb;
+  --color-brand-navy: #101e40;
+  --color-brand-blue: #1436cc;
+  --color-brand-lilac: #f4eff8;
+  --color-brand-surface: #f9f8fc;
+}
+
+:root {
+  --font-sans: 'Pretendard', 'Inter', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Roboto Mono', monospace;
+
+  /* Refined Brand Purple + Modern Slate Tokens */
+  --primary: #6800ad;
+  --primary-foreground: #ffffff;
+  --radius: 0.75rem;
+
+  --background: #ffffff;
+  --foreground: #101e40;
+
+  --card: #ffffff;
+  --card-foreground: #101e40;
+
+  --popover: #ffffff;
+  --popover-foreground: #101e40;
+
+  --secondary: #f4eff8;
+  --secondary-foreground: #500085;
+
+  --muted: #f8fafc;
+  --muted-foreground: #64748b;
+
+  --accent: #f4eff8;
+  --accent-foreground: #6800ad;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+
+  --border: #e2e8f0;
+  --input: #cbd5e1;
+  --ring: #6800ad;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+    outline-color: rgba(104, 0, 173, 0.4);
+  }
+  html {
+    font-family: var(--font-sans);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    line-height: 1.65;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+/* Cruip Glow & Decorative Background Styles */
+.glow-purple {
+  background: radial-gradient(circle at center, rgba(104, 0, 173, 0.15) 0%, rgba(20, 54, 204, 0.08) 50%, transparent 70%);
+}
+
+.glow-blue {
+  background: radial-gradient(circle at center, rgba(20, 54, 204, 0.12) 0%, rgba(104, 0, 173, 0.05) 50%, transparent 70%);
+}
+
+/* Guide Content Styles (Preserving semantics while applying Cruip modern cards) */
+.guide-content .guide-section-no {
+  display: none;
+}
+
+.guide-content p {
+  color: #334155;
+  line-height: 1.65;
+  margin-bottom: 0.65rem;
+}
+
+.guide-content h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 1.1rem;
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.guide-content .guide-flow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0.85rem 0;
+}
+
+.guide-content .guide-flow li {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+}
+
+.guide-content .guide-flow strong {
+  display: block;
+  font-size: 0.9375rem;
+  color: #6800ad;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.guide-content .guide-flow span {
+  display: block;
+  font-size: 0.8125rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.guide-content .guide-docs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0.85rem 0;
+}
+
+.guide-content .guide-docs > div {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+}
+
+.guide-content .guide-docs dt {
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 0.9375rem;
+  margin-bottom: 0.25rem;
+}
+
+.guide-content .guide-docs dd {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.guide-content .guide-numbered {
+  list-style-type: decimal;
+  padding-left: 1.25rem;
+  margin: 1.25rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.guide-content .guide-numbered li {
+  padding-left: 0.5rem;
+}
+
+.guide-content .guide-numbered li::marker {
+  font-weight: 800;
+  color: #6800ad;
+}
+
+.guide-content .guide-numbered h3 {
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+}
+
+.guide-content .guide-callout {
+  background: #fbf9fd;
+  border-left: 4px solid #6800ad;
+  border-radius: 0 0.75rem 0.75rem 0;
+  padding: 0.75rem 1rem;
+  margin: 0.85rem 0;
+  font-size: 0.875rem;
+  color: #334155;
+}
+
+.guide-checklist-wrap {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 2rem 1rem 0;
+}
+
+.guide-checklist-card {
+  border: 1px solid #e9d5ff;
+  border-radius: 1.25rem;
+  background: linear-gradient(135deg, #fcfaff 0%, #ffffff 70%);
+  padding: 1.25rem;
+  box-shadow: 0 12px 32px rgba(80, 0, 133, 0.06);
+}
+
+.guide-checklist-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f1e7fa;
+}
+
+.guide-checklist-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 auto;
+  border-radius: 0.8rem;
+  background: #f3e8ff;
+  color: #6800ad;
+}
+
+.guide-eyebrow {
+  margin: 0 0 0.15rem;
+  color: #6800ad;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.guide-checklist-heading h2 {
+  margin: 0;
+  color: #101e40;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.guide-checklist-progress {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: #64748b;
+  font-size: 0.7rem;
+  white-space: nowrap;
+}
+
+.guide-checklist-progress strong {
+  color: #6800ad;
+  font-size: 1rem;
+}
+
+.guide-checklist-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.55rem;
+  padding-top: 1rem;
+}
+
+.guide-checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  min-width: 0;
+  padding: 0.7rem 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  background: #ffffff;
+  color: #334155;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  cursor: pointer;
+  transition: border-color 160ms ease, background-color 160ms ease, color 160ms ease;
+}
+
+.guide-checklist-item input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.guide-checklist-item:hover,
+.guide-checklist-item:has(input:focus-visible) {
+  border-color: #c084fc;
+}
+
+.guide-checklist-item.is-checked {
+  border-color: #d8b4fe;
+  background: #faf5ff;
+  color: #500085;
+}
+
+.guide-checklist-check {
+  display: inline-flex;
+  flex: 0 0 auto;
+  color: #6800ad;
+}
+
+.guide-checklist-note {
+  margin: 0.8rem 0 0;
+  color: #94a3b8;
+  font-size: 0.7rem;
+}
+
+.guide-pdf-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.55rem;
+  margin: 0.85rem 0;
+}
+
+.guide-pdf-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  min-width: 0;
+  padding: 0.75rem;
+  border: 1px solid #e9d5ff;
+  border-radius: 0.8rem;
+  background: #fcfaff;
+}
+
+.guide-step-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: #6800ad;
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.guide-pdf-step strong,
+.guide-pdf-step span:not(.guide-step-index),
+.guide-pdf-step code {
+  display: block;
+}
+
+.guide-pdf-step strong {
+  color: #500085;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.guide-pdf-step span:not(.guide-step-index) {
+  margin-top: 0.2rem;
+  color: #64748b;
+  font-size: 0.72rem;
+  line-height: 1.45;
+}
+
+.guide-pdf-step code {
+  margin-top: 0.2rem;
+  color: #500085;
+  font-size: 0.72rem;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 767px) {
+  .guide-checklist-wrap {
+    padding: 1.25rem 1rem 0;
+  }
+
+  .guide-checklist-heading {
+    align-items: flex-start;
+  }
+
+  .guide-checklist-heading h2 {
+    font-size: 0.98rem;
+  }
+
+  .guide-checklist-progress {
+    margin-left: auto;
+  }
+
+  .guide-checklist-list,
+  .guide-pdf-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+.guide-content .guide-table-wrap {
+  overflow-x: auto;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  margin: 1.25rem 0;
+}
+
+.guide-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  text-align: left;
+}
+
+.guide-content th {
+  background: #f1f5f9;
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+  color: #0f172a;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.guide-content td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  color: #334155;
+  vertical-align: top;
+}
+
+.guide-content tr:last-child td {
+  border-bottom: none;
+}
+
+.guide-content .guide-related {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.6rem 0.85rem;
+  background: #faf5ff;
+  border-radius: 0.75rem;
+  border: 1px solid #f3e8ff;
+  margin: 1rem 0;
+}
+
+.guide-content .guide-related a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #6800ad;
+  text-decoration: none;
+}
+
+.guide-content .guide-related a:hover {
+  text-decoration: underline;
+  color: #500085;
+}
+
+.guide-content .guide-review {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0.85rem 0;
+}
+
+.guide-content .guide-review li {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+.guide-content .guide-review strong {
+  display: block;
+  color: #0f172a;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  font-size: 0.9375rem;
+}
+
+.guide-content .guide-review span {
+  display: block;
+  color: #475569;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
