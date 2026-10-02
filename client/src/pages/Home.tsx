@@ -4,7 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageIllustration from '@/components/PageIllustration';
 import { FAQ_DATA, FaqItem } from '@/data/faqData';
-import { SOLUTION_GROUPS, NOTICE_ROUNDS } from '@/data/businessData';
+import { SOLUTION_GROUPS, SOLUTION_COUNT, NOTICE_ROUNDS } from '@/data/businessData';
 import {
   Search,
   ArrowRight,
@@ -103,8 +103,8 @@ export default function Home() {
 
                 <div className="bg-white rounded-xl p-3.5 border border-slate-100 text-center shadow-xs flex flex-col items-center justify-center min-w-0">
                   <div className="text-xs text-slate-500 font-medium mb-1">지원 솔루션</div>
-                  <div className="text-base sm:text-lg lg:text-xl leading-tight font-bold text-slate-900 whitespace-nowrap">총 62종</div>
-                  <div className="text-[11px] leading-tight text-purple-700 font-medium mt-1 whitespace-nowrap">9개 분야 솔루션 포괄</div>
+                  <div className="text-base sm:text-lg lg:text-xl leading-tight font-bold text-slate-900 whitespace-nowrap">총 {SOLUTION_COUNT}종</div>
+                  <div className="text-[11px] leading-tight text-purple-700 font-medium mt-1 whitespace-nowrap">기존 62종 + 추가 8종</div>
                 </div>
               </div>
 
@@ -419,7 +419,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 4. AI SOLUTIONS LIST (62종) */}
+        {/* 4. AI SOLUTIONS LIST */}
         <section id="solutions" className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-14">
@@ -427,7 +427,7 @@ export default function Home() {
                 지원 솔루션 목록
               </span>
               <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
-                게임 제작의 모든 과정에, 지원 AI 솔루션 62종
+                게임 제작의 모든 과정에, 지원 AI 솔루션 {SOLUTION_COUNT}종
               </h2>
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                 기획, 아트, 프로그래밍, 3D 모델링, 사운드 등 파이프라인 전 분야를 지원합니다.
@@ -439,7 +439,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="text-xs font-semibold text-purple-700 hover:text-purple-900 underline underline-offset-4 flex items-center gap-1"
                 >
-                  <span>지원개시일 포함 전체 목록 및 규정 확인 (공고문 p.4)</span>
+                  <span>기존 62종 목록 및 규정 확인 (4차 공고문 p.4)</span>
                   <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               </div>

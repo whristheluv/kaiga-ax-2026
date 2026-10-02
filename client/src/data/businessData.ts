@@ -119,8 +119,23 @@ export const SOLUTION_GROUPS: SolutionGroup[] = [
       "WhisperFlow",
       "Unity AI"
     ]
+  },
+  {
+    "title": "10 추가 지원 솔루션 8종 +",
+    "chips": [
+      "Adobe Firefly",
+      "Google AI Studio",
+      "Google Gemini API",
+      "OpenAI API",
+      "QuickMagic",
+      "Retro Diffusion",
+      "XSTAGE",
+      "Ace Studio"
+    ]
   }
 ];
+
+export const SOLUTION_COUNT = SOLUTION_GROUPS.reduce((total, group) => total + group.chips.length, 0);
 
 export const NOTICE_ROUNDS: NoticeRound[] = [
   {

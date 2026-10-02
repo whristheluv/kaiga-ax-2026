@@ -1,3 +1,4 @@
+import { SOLUTION_COUNT } from '@/data/businessData';
 import React from 'react';
 import { Link } from 'wouter';
 import { Mail, FileText, ExternalLink, ShieldCheck } from 'lucide-react';
@@ -59,7 +60,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="/#solutions" className="text-slate-400 hover:text-white transition-colors">
-                  지원 AI 솔루션 62종
+                  지원 AI 솔루션 {SOLUTION_COUNT}종
                 </a>
               </li>
               <li>
