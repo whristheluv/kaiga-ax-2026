@@ -594,7 +594,7 @@ export default function Home() {
             <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
               사업에 대해 더 궁금하신가요?
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl mx-auto mb-8">
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-none mx-auto mb-8 lg:whitespace-nowrap">
               정산 지침과 자주 묻는 59개 질문을 확인하고, 추가 문의사항은 사업기획실로 편하게 문의하세요.
             </p>
 

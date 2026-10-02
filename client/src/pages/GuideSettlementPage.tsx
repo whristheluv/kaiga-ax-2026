@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageIllustration from '@/components/PageIllustration';
+import { getSettlementDeadline } from '@/lib/settlementDeadline';
 import { GUIDE_DATA } from '@/data/guideData';
 import {
   FileSpreadsheet,
@@ -22,6 +23,13 @@ import { Link } from 'wouter';
 import { toast } from 'sonner';
 
 export default function GuideSettlementPage() {
+  const [now, setNow] = useState(() => Date.now());
+  const settlementDeadline = getSettlementDeadline(now);
+  useEffect(() => {
+    const timer = window.setInterval(() => setNow(Date.now()), 1000);
+    return () => window.clearInterval(timer);
+  }, []);
+
   const [activeSection, setActiveSection] = useState<string>(
     GUIDE_DATA.sections[0]?.id || ''
   );
@@ -107,14 +115,18 @@ export default function GuideSettlementPage() {
 
               {/* Deadline Card */}
               {GUIDE_DATA.introDeadline && (
-                <div className="lg:w-80 bg-white rounded-2xl p-6 border border-purple-200/80 shadow-md shadow-purple-900/5 flex flex-col justify-between">
+                <div className="w-full lg:w-80 lg:shrink-0 bg-white rounded-2xl p-6 border border-purple-200/80 shadow-md shadow-purple-900/5 flex flex-col justify-between">
                   <div>
                     <div className="flex items-center gap-2 text-xs font-bold text-purple-700 tracking-wider mb-2">
                       <Calendar className="w-4 h-4" />
                       <span>월별 정산 자료 제출 기한</span>
                     </div>
                     <div className="text-lg sm:text-xl font-extrabold text-slate-900 leading-snug mb-3">
-                      익월 15일 23:59 (KST)
+                      {settlementDeadline.label}
+                    </div>
+                    <div className="mb-4 rounded-lg bg-purple-50 px-3 py-2.5" role="timer" aria-label="정산 제출 마감까지 남은 시간" aria-live="off">
+                      <p className="text-xs font-medium text-purple-700 mb-1">마감까지 남은 시간</p>
+                      <p className="text-sm font-bold text-purple-900 tabular-nums">{settlementDeadline.remaining}</p>
                     </div>
                     <ul className="space-y-1.5 text-xs text-slate-600 leading-relaxed">
                       <li className="flex items-start gap-1.5">
