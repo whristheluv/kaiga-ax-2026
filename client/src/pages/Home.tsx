@@ -1,5 +1,3 @@
-import MeetingUpdate from '@/components/MeetingUpdate';
-import SolutionReview from '@/components/SolutionReview';
 import React, { useState, useMemo } from 'react';
 import { Link } from 'wouter';
 import Header from '@/components/Header';
@@ -100,13 +98,13 @@ export default function Home() {
                 <div className="bg-white rounded-xl p-3.5 border border-slate-100 text-center shadow-xs flex flex-col items-center justify-center min-w-0">
                   <div className="text-xs text-slate-500 font-medium mb-1">지원 비율</div>
                   <div className="text-base sm:text-lg lg:text-xl leading-tight font-bold text-slate-900 whitespace-nowrap">국내 100% · 해외 90%</div>
-                  <div className="text-[11px] leading-tight text-purple-700 font-medium mt-1 whitespace-nowrap">국내: 인보이스 공급가 확인</div>
+                  <div className="text-[11px] leading-tight text-purple-700 font-medium mt-1 whitespace-nowrap">VAT 제외 공급가 기준</div>
                 </div>
 
                 <div className="bg-white rounded-xl p-3.5 border border-slate-100 text-center shadow-xs flex flex-col items-center justify-center min-w-0">
                   <div className="text-xs text-slate-500 font-medium mb-1">지원 솔루션</div>
                   <div className="text-base sm:text-lg lg:text-xl leading-tight font-bold text-slate-900 whitespace-nowrap">총 {SOLUTION_COUNT}종</div>
-                  <div className="text-[11px] leading-tight text-purple-700 font-medium mt-1 whitespace-nowrap">기존 62종 + 신규 허용 9건</div>
+                  <div className="text-[11px] leading-tight text-purple-700 font-medium mt-1 whitespace-nowrap">기존 62종 + 추가 8종</div>
                 </div>
               </div>
 
@@ -125,7 +123,7 @@ export default function Home() {
                   className="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-semibold text-sm border border-slate-200 shadow-xs transition-all active:scale-[0.98]"
                 >
                   <HelpCircle className="w-4 h-4 mr-1.5 text-purple-600" />
-                  <span>전체 QnA {FAQ_DATA.length}개 확인</span>
+                  <span>전체 QnA 59개 확인</span>
                 </Link>
 
                 <Link
@@ -139,8 +137,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-10"><MeetingUpdate /></div>
 
         {/* 2. QUICK QNA SEARCH SECTION */}
         <section className="relative pb-20">
@@ -161,7 +157,7 @@ export default function Home() {
                   href="/faq/"
                   className="inline-flex items-center gap-1 text-sm font-semibold text-purple-700 hover:text-purple-900 transition-colors"
                 >
-                  <span>전체 질문 목록 ({FAQ_DATA.length}개)</span>
+                  <span>전체 질문 목록 (59개)</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -253,7 +249,7 @@ export default function Home() {
                       href="/faq/"
                       className="text-xs font-semibold text-purple-700 hover:underline"
                     >
-                      전체 {FAQ_DATA.length}개 질문 목록에서 찾아보기
+                      전체 59개 질문 목록에서 찾아보기
                     </Link>
                   </div>
                 )}
@@ -479,7 +475,6 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <SolutionReview />
           </div>
         </section>
 
@@ -530,7 +525,7 @@ export default function Home() {
                       {Object.entries(round.info).map(([key, val], iIdx) => (
                         <div key={iIdx} className="grid grid-cols-[3.5rem_minmax(0,1fr)] gap-2 items-start py-1.5 border-b border-slate-100">
                           <dt className="text-slate-500 font-medium leading-snug">{key}</dt>
-                          <dd className={`font-semibold text-slate-800 text-right leading-snug ${key === '모집 기준' || key === '선정 결과' ? '' : 'whitespace-nowrap'}`}>{val}</dd>
+                          <dd className={`font-semibold text-slate-800 text-right leading-snug ${key === '모집 기준' ? '' : 'whitespace-nowrap'}`}>{val}</dd>
                         </div>
                       ))}
                     </dl>
@@ -549,12 +544,6 @@ export default function Home() {
                   </div>
                 </div>
               ))}
-            </div>
-
-            <div className="mt-8 rounded-xl border border-purple-200 bg-white p-6 text-sm leading-7 text-slate-700">
-              <h3 className="text-lg font-bold text-slate-900">사업 진행 소식 · 2026.10.01 기준</h3>
-              <p className="mt-2">한국인공지능게임협회는 3차 49개사, 4차 85개사 선정을 완료했습니다. 위 회차별 모집 기준은 당시 공고 내용이며, 선정 결과는 운영회의 보고 기준입니다.</p>
-              <p className="mt-2"><strong>Game Days 예정:</strong> 11월 9~10일 AX 우수사례 체험존, 11월 10일 AX 성과발표회가 계획되어 있습니다. AI 활용으로 개발한 우수사례의 영상·발표자료를 준비하는 방향으로 논의됐으며, 장소·참가 방법·확정 세부 일정은 별도 안내합니다.</p>
             </div>
 
             {/* Flow 4 steps */}
@@ -606,7 +595,7 @@ export default function Home() {
               사업에 대해 더 궁금하신가요?
             </h2>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-none mx-auto mb-8 lg:whitespace-nowrap">
-              정산 지침과 자주 묻는 {FAQ_DATA.length}개 질문을 확인하고, 추가 문의사항은 사업기획실로 편하게 문의하세요.
+              정산 지침과 자주 묻는 59개 질문을 확인하고, 추가 문의사항은 사업기획실로 편하게 문의하세요.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-3.5 mb-10">

@@ -14,18 +14,17 @@ export interface NoticeRound {
 
 export const SOLUTION_GROUPS: SolutionGroup[] = [
   {
-    "title": "01 기획 6종 +",
+    "title": "01 기획 5종 +",
     "chips": [
       "ChatGPT",
       "Gemini",
       "Claude",
       "Claude API",
-      "PixAI",
-      "OpenAI API"
+      "PixAI"
     ]
   },
   {
-    "title": "02 프로그래밍 10종 +",
+    "title": "02 프로그래밍 9종 +",
     "chips": [
       "GitHub Copilot",
       "Tabnine",
@@ -35,8 +34,7 @@ export const SOLUTION_GROUPS: SolutionGroup[] = [
       "JetBrains",
       "Kiro",
       "Windsurf",
-      "Kimi",
-      "openai usage credit"
+      "Kimi"
     ]
   },
   {
@@ -47,7 +45,7 @@ export const SOLUTION_GROUPS: SolutionGroup[] = [
     ]
   },
   {
-    "title": "04 아트 22종 +",
+    "title": "04 아트 19종 +",
     "chips": [
       "Typecast",
       "Aether AI",
@@ -67,10 +65,7 @@ export const SOLUTION_GROUPS: SolutionGroup[] = [
       "Gen-4.5 Runway",
       "hailuo",
       "Ludo AI",
-      "Novel AI",
-      "Adobe Firefly",
-      "Google Gemini API",
-      "Retro Diffusion"
+      "Novel AI"
     ]
   },
   {
@@ -84,17 +79,15 @@ export const SOLUTION_GROUPS: SolutionGroup[] = [
     ]
   },
   {
-    "title": "06 3D 에셋 애니메이션 5종 +",
+    "title": "06 3D 에셋 애니메이션 3종 +",
     "chips": [
       "comfy",
       "Higgsfield",
-      "BytePlus Seedance",
-      "QuickMagic",
-      "XSTAGE"
+      "BytePlus Seedance"
     ]
   },
   {
-    "title": "07 사운드 9종 +",
+    "title": "07 사운드 8종 +",
     "chips": [
       "Gamesound.ai",
       "AIVA",
@@ -103,8 +96,7 @@ export const SOLUTION_GROUPS: SolutionGroup[] = [
       "mix audio",
       "mureka.ai",
       "SUNO",
-      "CapCut",
-      "Ace Studio"
+      "CapCut"
     ]
   },
   {
@@ -115,7 +107,7 @@ export const SOLUTION_GROUPS: SolutionGroup[] = [
     ]
   },
   {
-    "title": "09 게임개발통합 10종 +",
+    "title": "09 게임개발통합 9종 +",
     "chips": [
       "NC AI VARCO",
       "Hive (AI)",
@@ -125,8 +117,20 @@ export const SOLUTION_GROUPS: SolutionGroup[] = [
       "OpenRouter",
       "DeepL",
       "WhisperFlow",
-      "Unity AI",
-      "Google AI Studio"
+      "Unity AI"
+    ]
+  },
+  {
+    "title": "10 추가 지원 솔루션 8종 +",
+    "chips": [
+      "Adobe Firefly",
+      "Google AI Studio",
+      "Google Gemini API",
+      "OpenAI API",
+      "QuickMagic",
+      "Retro Diffusion",
+      "XSTAGE",
+      "Ace Studio"
     ]
   }
 ];
@@ -163,8 +167,7 @@ export const NOTICE_ROUNDS: NoticeRound[] = [
     "info": {
       "접수 마감": "2026.09.04 17:00",
       "협약 기간": "협약체결일 ~ 2026.12.31",
-      "모집 기준": "11인 이상 우선 적격기업 통합추첨 후 잔여분 배정",
-      "선정 결과": "49개사 (10.01 기준)"
+      "모집 기준": "11인 이상 우선 적격기업 통합추첨 후 잔여분 배정"
     },
     "pdfHref": "/notices/kaiga-ax-2026-round3.pdf"
   },
@@ -175,8 +178,7 @@ export const NOTICE_ROUNDS: NoticeRound[] = [
     "info": {
       "접수 마감": "2026.09.21 11:00",
       "협약 기간": "협약체결일 ~ 2026.12.31",
-      "모집 기준": "11인 이상 우선 적격기업 통합추첨 후 잔여분 배정",
-      "선정 결과": "85개사 (10.01 기준)"
+      "모집 기준": "11인 이상 우선 적격기업 통합추첨 후 잔여분 배정"
     },
     "pdfHref": "/notices/kaiga-ax-2026-round4.pdf"
   }
