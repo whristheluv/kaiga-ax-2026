@@ -1,3 +1,4 @@
+import MeetingUpdate from '@/components/MeetingUpdate';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -16,7 +17,7 @@ import { Link } from 'wouter';
 import { toast } from 'sonner';
 
 const CATEGORIES = ['전체', '사업 안내', '정산·지원금', '서류·증빙', 'AI 솔루션', '계정·인원'] as const;
-const QUICK_SEARCHES = ['제출기한', '환율', '4대보험', '카드 영수증', '연간 결제', '좌석 추가'];
+const QUICK_SEARCHES = ['활용내역', '대체 증빙', 'Firefly', '환율', '4대보험', '크레딧'];
 
 type Category = (typeof CATEGORIES)[number];
 
@@ -120,7 +121,8 @@ export default function FaqPage() {
         </section>
 
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <section className="relative z-10 -mt-6 rounded-2xl border border-slate-200 bg-white p-4 shadow-xl shadow-slate-900/8 sm:p-6">
+          <div className="py-8"><MeetingUpdate /></div>
+          <section className="relative z-10 rounded-2xl border border-slate-200 bg-white p-4 shadow-xl shadow-slate-900/8 sm:p-6">
             <div className="flex items-center justify-between gap-3">
               <label htmlFor="faq-search" className="flex items-center gap-2 text-sm font-bold text-slate-900">
                 <Search className="h-4 w-4 text-purple-600" />

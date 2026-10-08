@@ -1,3 +1,4 @@
+import { FAQ_DATA } from '@/data/faqData';
 import { SOLUTION_COUNT } from '@/data/businessData';
 import React from 'react';
 import { Link } from 'wouter';
@@ -75,7 +76,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/faq/" className="text-purple-300 hover:text-white transition-colors font-medium">
-                  전체 질문 및 답변 (59개)
+                  전체 질문 및 답변 ({FAQ_DATA.length}개)
                 </Link>
               </li>
             </ul>

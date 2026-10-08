@@ -1,3 +1,4 @@
+import { FAQ_DATA } from '@/data/faqData';
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'wouter';
 import { Menu, X, ArrowUpRight, HelpCircle, FileSpreadsheet } from 'lucide-react';
@@ -120,7 +121,7 @@ export default function Header() {
                   }`}
                 >
                   <HelpCircle className="w-4 h-4" />
-                  <span>QnA (59개)</span>
+                  <span>QnA ({FAQ_DATA.length}개)</span>
                 </Link>
               );
             }

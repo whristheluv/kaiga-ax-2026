@@ -1,3 +1,4 @@
+import MeetingUpdate from '@/components/MeetingUpdate';
 import React, { useEffect, useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -36,8 +37,8 @@ export default function GuideSettlementPage() {
   const [copiedLink, setCopiedLink] = useState(false);
   const checklistItems = [
     { id: 'period', label: '협약기간과 월별 제출기한을 확인했습니다.' },
-    { id: 'report', label: '월간 정산보고서에 사용 솔루션과 AI 활용내역을 작성했습니다.' },
-    { id: 'proof', label: '결제 건별 증빙 PDF를 Invoice → Receipt → 카드전표 순서로 준비했습니다.' },
+    { id: 'report', label: '월간 정산보고서에 솔루션 1개당 활용내역 1개를 작성했습니다.' },
+    { id: 'proof', label: '결제 건별 증빙을 준비하고 인보이스 미발급 건은 대체자료를 첨부했습니다.' },
     { id: 'people', label: '4대보험 가입자명부 또는 사업자등록증명을 준비했습니다.' },
     { id: 'newcomer', label: '신규 참여자가 있다면 개인정보 동의서를 준비했습니다.' },
     { id: 'account', label: '지원금 수령계좌 확인자료를 준비했습니다.' },
@@ -156,6 +157,8 @@ export default function GuideSettlementPage() {
             </div>
           </div>
         </section>
+
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8"><MeetingUpdate /></div>
 
         {/* Submission Checklist */}
         <section className="guide-checklist-wrap" aria-labelledby="settlement-checklist-title">
