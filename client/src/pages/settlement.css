@@ -659,3 +659,203 @@
     font-size: 11px;
   }
 }
+
+/* Targeted audit: make the first screen a working guide, not a campaign cover. */
+.notebook-cover-grid {
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 48px;
+  align-items: start;
+  padding: 30px 0;
+}
+.notebook-intro h1 {
+  font-size: 38px;
+  line-height: 1.3;
+  letter-spacing: -0.04em;
+  margin-bottom: 12px;
+}
+.notebook-description {
+  font-size: 15px;
+  line-height: 1.8;
+}
+.notebook-deadline {
+  border-radius: 3px;
+  box-shadow: none;
+  padding: 22px;
+}
+.deadline-time {
+  text-align: left;
+  color: white;
+  font-size: 24px;
+  font-weight: 750;
+  line-height: 1.5;
+  margin: 18px 0;
+}
+.deadline-top,
+.deadline-top span:last-child,
+.deadline-countdown > span,
+.deadline-note {
+  font-size: 12px;
+}
+.deadline-countdown strong {
+  font-size: 19px;
+}
+.evidence-example {
+  margin-top: 24px;
+}
+.evidence-example h2 {
+  font-size: 16px;
+  font-weight: 750;
+  margin-bottom: 10px;
+}
+.evidence-example ol {
+  counter-reset: evidence;
+  border-top: 1px solid #d9d3de;
+  list-style: none;
+}
+.evidence-example li {
+  counter-increment: evidence;
+  display: grid;
+  grid-template-columns: 22px 118px 1fr;
+  gap: 8px;
+  padding: 10px 0;
+  border-bottom: 1px solid #d9d3de;
+  align-items: baseline;
+  font-size: 13px;
+}
+.evidence-example li::before {
+  content: counter(evidence, decimal-leading-zero);
+  color: #6800ad;
+  font-size: 12px;
+  font-weight: 700;
+}
+.evidence-example li > span {
+  color: #625669;
+}
+.evidence-example code {
+  font-family: inherit;
+  overflow-wrap: anywhere;
+}
+.evidence-example > p {
+  font-size: 12px;
+  color: #625669;
+  margin-top: 10px;
+}
+.notebook-actions {
+  margin-top: 20px;
+}
+.notebook-stages a {
+  padding-block: 18px;
+}
+.notebook-stages div > span,
+.stage-number {
+  font-size: 12px;
+}
+.notebook-index-title span {
+  font-size: 12px;
+  color: #625669;
+}
+.notebook-index nav > a > span:first-child {
+  font-size: 12px;
+  color: #625669;
+}
+.notebook-index-caption,
+.notebook-edition,
+.notebook-checklist-head p {
+  font-size: 12px;
+  color: #625669;
+}
+.notebook-index nav > a[aria-current] > span {
+  color: #6800ad;
+}
+.notebook-index nav > a,
+.notebook-index-tools a,
+.notebook-index-tools button {
+  min-height: 44px;
+  font-size: 13px;
+  align-items: center;
+}
+.notebook-chapter .guide-content .guide-related a::before {
+  content: none;
+}
+.notebook-chapter .guide-content .guide-related a {
+  min-height: 36px;
+  font-size: 13px;
+}
+.notebook-checklist-note,
+.notebook-help p,
+.notebook-help span,
+.notebook-help a,
+.notebook-back {
+  font-size: 13px;
+  color: #625669;
+}
+.notebook-back {
+  padding-block: 12px;
+}
+.settlement-notebook :is(a, button, input):focus-visible {
+  outline: 3px solid #6800ad;
+  outline-offset: 4px;
+}
+.settlement-notebook footer :is(a, button):focus-visible {
+  outline-color: #e9d5ff;
+}
+.guide-skip-link {
+  position: fixed;
+  top: -100px;
+  left: 16px;
+  z-index: 100;
+  padding: 12px 18px;
+  background: #21182b;
+  color: white;
+}
+.guide-skip-link:focus {
+  top: 12px;
+}
+#guide-top {
+  scroll-margin-top: 80px;
+}
+@media (max-width: 1023px) {
+  .notebook-cover-grid {
+    gap: 28px;
+    grid-template-columns: minmax(0, 1fr) 290px;
+  }
+  .evidence-example li {
+    grid-template-columns: 22px 1fr;
+  }
+  .evidence-example li > span {
+    grid-column: 2;
+  }
+}
+@media (max-width: 767px) {
+  .notebook-cover-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px 0;
+  }
+  .notebook-intro h1 {
+    font-size: 30px;
+  }
+  .notebook-description {
+    font-size: 14px;
+  }
+  .notebook-edition {
+    font-size: 11px;
+    letter-spacing: 0.04em;
+  }
+  .notebook-stages div > span {
+    font-size: 12px;
+  }
+  .notebook-index nav > a {
+    font-size: 13px;
+  }
+  .notebook-chapter .guide-content {
+    font-size: 14px;
+  }
+  .deadline-countdown {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .notebook-checklist-head h2 {
+    font-size: 24px;
+  }
+}

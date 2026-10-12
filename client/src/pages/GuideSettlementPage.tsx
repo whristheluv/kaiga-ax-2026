@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getSettlementDeadline } from "@/lib/settlementDeadline";
 import { GUIDE_DATA } from "@/data/guideData";
-import { ArrowUpRight, ArrowDown, Check, Copy, Mail } from "lucide-react";
+import { ArrowUpRight, Check, Copy } from "lucide-react";
 import { Link } from "wouter";
 import { toast } from "sonner";
 import "./settlement.css";
@@ -48,11 +48,6 @@ function SettlementDeadline() {
       <div className="deadline-top">
         <span>다음 제출 마감</span>
         <span>KST · 한국 표준시</span>
-      </div>
-      <div className="deadline-date">
-        <span>{deadline.label.split("월")[0]}월</span>
-        <strong>15</strong>
-        <span>일</span>
       </div>
       <p className="deadline-time">{deadline.label}</p>
       <div
@@ -133,7 +128,10 @@ export default function GuideSettlementPage() {
   return (
     <div className="settlement-notebook">
       <Header />
-      <main id="guide-top">
+      <a className="guide-skip-link" href="#guide-top">
+        정산 가이드 본문으로 건너뛰기
+      </a>
+      <main id="guide-top" tabIndex={-1}>
         <section className="notebook-cover" aria-labelledby="guide-title">
           <div className="notebook-shell">
             <div className="notebook-edition">
@@ -142,19 +140,42 @@ export default function GuideSettlementPage() {
             </div>
             <div className="notebook-cover-grid">
               <div className="notebook-intro">
-                <p className="notebook-kicker">
-                  게임을 만드는 시간에, 더 집중할 수 있도록.
-                </p>
-                <h1 id="guide-title">
-                  정산 이용
-                  <br />
-                  <span>가이드.</span>
-                </h1>
+                <h1 id="guide-title">정산 이용 가이드</h1>
                 <p className="notebook-description">
-                  일정 확인부터 증빙 준비, 보고서 작성과 보완까지.
-                  <br className="hidden sm:block" /> 매월 정산에 필요한 내용을
-                  한곳에 모았습니다.
+                  월간 보고서와 결제 증빙을 준비하고, 협회 안내 메일의 접수처로
+                  제출하세요.
                 </p>
+                <section
+                  className="evidence-example"
+                  aria-labelledby="evidence-title"
+                >
+                  <h2 id="evidence-title">
+                    결제 1건의 증빙, 이렇게 준비하세요
+                  </h2>
+                  <ol>
+                    <li>
+                      <strong>자료 모으기</strong>
+                      <span>
+                        Invoice → Receipt → 카드사 매출전표 순서로 보유 자료
+                        정리
+                      </span>
+                    </li>
+                    <li>
+                      <strong>PDF 하나로 병합</strong>
+                      <span>
+                        파일명 예: <code>계정명_솔루션명_09월.pdf</code>
+                      </span>
+                    </li>
+                    <li>
+                      <strong>보고서와 대조</strong>
+                      <span>계정·솔루션·결제금액이 같은지 확인</span>
+                    </li>
+                  </ol>
+                  <p>
+                    파일명은 예시입니다. 제출 형식과 접수처는 협회 안내를
+                    확인하세요.
+                  </p>
+                </section>
                 <div className="notebook-actions">
                   <a
                     className="notebook-button"
@@ -162,10 +183,11 @@ export default function GuideSettlementPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    정산서 양식함 열기 <ArrowUpRight size={18} />
+                    정산서 양식함 열기 <span className="sr-only">(새 창)</span>
+                    <ArrowUpRight size={18} aria-hidden="true" />
                   </a>
                   <a className="notebook-text-link" href="#documents">
-                    준비할 서류 보기 <ArrowDown size={16} />
+                    준비할 서류 보기
                   </a>
                 </div>
               </div>
@@ -179,7 +201,6 @@ export default function GuideSettlementPage() {
                     <strong>{stage.title}</strong>
                     <span>{stage.detail}</span>
                   </div>
-                  <ArrowUpRight size={19} />
                 </a>
               ))}
             </nav>
@@ -205,18 +226,19 @@ export default function GuideSettlementPage() {
                 </a>
               ))}
               <a href="#submission-checklist" className="notebook-check-link">
-                <Check size={16} /> 제출 전 체크리스트{" "}
-                <span>{checkedItems.length}/6</span>
+                제출 전 체크리스트 <span>{checkedItems.length}/6</span>
               </a>
             </nav>
             <div className="notebook-index-tools">
               <button type="button" onClick={copyForm}>
-                {copied ? <Check size={15} /> : <Copy size={15} />}
+                {copied ? (
+                  <Check size={15} aria-hidden="true" />
+                ) : (
+                  <Copy size={15} aria-hidden="true" />
+                )}
                 {copied ? "양식 링크 복사됨" : "양식 링크 복사"}
               </button>
-              <Link href="/faq/">
-                자주 묻는 질문 59개 <ArrowUpRight size={15} />
-              </Link>
+              <Link href="/faq/">자주 묻는 질문 59개</Link>
             </div>
             <p className="notebook-index-caption">
               KAIGA
@@ -288,10 +310,7 @@ export default function GuideSettlementPage() {
                 <h2>막히는 부분이 있나요?</h2>
                 <span>추가 문의사항은 사업기획실로 편하게 문의하세요.</span>
               </div>
-              <a href="mailto:kigs@k-indiegame.or.kr">
-                <Mail size={18} /> kigs@k-indiegame.or.kr{" "}
-                <ArrowUpRight size={18} />
-              </a>
+              <a href="mailto:kigs@k-indiegame.or.kr">kigs@k-indiegame.or.kr</a>
             </div>
             <a className="notebook-back" href="#guide-top">
               가이드 처음으로 ↑

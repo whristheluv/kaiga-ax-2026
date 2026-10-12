@@ -1,7 +1,7 @@
-import { SOLUTION_COUNT } from '@/data/businessData';
-import React from 'react';
-import { Link } from 'wouter';
-import { Mail, FileText, ExternalLink, ShieldCheck } from 'lucide-react';
+import { SOLUTION_COUNT } from "@/data/businessData";
+import React from "react";
+import { Link } from "wouter";
+import { Mail, FileText, ExternalLink, ShieldCheck } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -29,8 +29,9 @@ export default function Footer() {
             </div>
 
             <p className="text-sm text-slate-400 max-w-md leading-relaxed">
-              본 사업은 국내 게임 개발사의 AI 솔루션 도입과 인공지능 전환(AX)을 촉진하여
-              제작 효율성 및 글로벌 경쟁력을 강화하기 위한 공공 지원사업입니다.
+              본 사업은 국내 게임 개발사의 AI 솔루션 도입과 인공지능 전환(AX)을
+              촉진하여 제작 효율성 및 글로벌 경쟁력을 강화하기 위한 공공
+              지원사업입니다.
             </p>
 
             <div className="pt-2 flex flex-wrap gap-4 text-xs text-slate-400">
@@ -54,27 +55,42 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="/#about" className="text-slate-400 hover:text-white transition-colors">
+                <a
+                  href="/#about"
+                  className="text-slate-400 hover:text-white transition-colors"
+                >
                   사업 소개 및 지원 한도
                 </a>
               </li>
               <li>
-                <a href="/#solutions" className="text-slate-400 hover:text-white transition-colors">
+                <a
+                  href="/#solutions"
+                  className="text-slate-400 hover:text-white transition-colors"
+                >
                   지원 AI 솔루션 {SOLUTION_COUNT}종
                 </a>
               </li>
               <li>
-                <a href="/#notices" className="text-slate-400 hover:text-white transition-colors">
+                <a
+                  href="/#notices"
+                  className="text-slate-400 hover:text-white transition-colors"
+                >
                   1~4차 모집 공고 및 일정
                 </a>
               </li>
               <li>
-                <Link href="/guide/settlement/" className="text-slate-400 hover:text-white transition-colors">
+                <Link
+                  href="/guide/settlement/"
+                  className="text-slate-400 hover:text-white transition-colors"
+                >
                   정산 이용 가이드
                 </Link>
               </li>
               <li>
-                <Link href="/faq/" className="text-purple-300 hover:text-white transition-colors font-medium">
+                <Link
+                  href="/faq/"
+                  className="text-purple-300 hover:text-white transition-colors font-medium"
+                >
                   전체 질문 및 답변 (59개)
                 </Link>
               </li>
@@ -136,8 +152,25 @@ export default function Footer() {
         </div>
 
         {/* Bottom copyright */}
-        <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <p>© 2026 한국인공지능게임협회 (KAIGA). All rights reserved.</p>
+          <nav
+            aria-label="이용 정책"
+            className="flex flex-wrap justify-center gap-4"
+          >
+            <Link
+              href="/terms/"
+              className="underline underline-offset-4 hover:text-white"
+            >
+              이용약관
+            </Link>
+            <Link
+              href="/privacy/"
+              className="underline underline-offset-4 hover:text-white"
+            >
+              개인정보처리방침
+            </Link>
+          </nav>
           <p className="flex items-center gap-1">
             <span>참여기업 전용 안내 및 질의응답 포털</span>
           </p>

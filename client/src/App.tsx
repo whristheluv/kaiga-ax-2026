@@ -8,6 +8,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import Home from "./pages/Home";
 import FaqPage from "./pages/FaqPage";
 import GuideSettlementPage from "./pages/GuideSettlementPage";
+import { TermsPage, PrivacyPage } from "./pages/PolicyPage";
 
 function Router() {
   return (
@@ -17,6 +18,10 @@ function Router() {
       <Route path="/faq/" component={FaqPage} />
       <Route path="/guide/settlement" component={GuideSettlementPage} />
       <Route path="/guide/settlement/" component={GuideSettlementPage} />
+      <Route path="/terms" component={TermsPage} />
+      <Route path="/terms/" component={TermsPage} />
+      <Route path="/privacy" component={PrivacyPage} />
+      <Route path="/privacy/" component={PrivacyPage} />
       <Route path="/404" component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
@@ -43,8 +48,18 @@ function ScrollManager() {
     <button
       type="button"
       aria-label="맨 위로 이동"
+      hidden={!showBackToTop}
       className={`fixed bottom-5 right-4 z-40 inline-flex h-11 w-11 items-center justify-center rounded-full bg-purple-700 text-white shadow-lg shadow-purple-900/20 transition-all duration-200 hover:bg-purple-800 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 md:hidden ${showBackToTop ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-3 opacity-0"}`}
-      onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}
+      onClick={() =>
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: window.matchMedia("(prefers-reduced-motion: reduce)")
+            .matches
+            ? "auto"
+            : "smooth",
+        })
+      }
     >
       <ArrowUp className="h-5 w-5" />
     </button>
