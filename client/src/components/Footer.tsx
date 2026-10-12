@@ -1,3 +1,4 @@
+import { FAQ_COUNT } from "@/data/faqData";
 import { SOLUTION_COUNT } from "@/data/businessData";
 import React from "react";
 import { Link } from "wouter";
@@ -91,7 +92,7 @@ export default function Footer() {
                   href="/faq/"
                   className="text-purple-300 hover:text-white transition-colors font-medium"
                 >
-                  전체 질문 및 답변 (59개)
+                  전체 질문 및 답변 ({FAQ_COUNT}개)
                 </Link>
               </li>
             </ul>
@@ -105,7 +106,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <a
-                  href="https://bit.ly/4xZ2YJu"
+                  href="https://drive.google.com/drive/folders/1yZGpz_u_PEeuzXGQlL1k0bSMwFpSu64A?usp=drive_link"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-slate-400 hover:text-purple-300 transition-colors"

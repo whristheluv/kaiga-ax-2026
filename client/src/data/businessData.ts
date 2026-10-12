@@ -33,7 +33,7 @@ export const SOLUTION_GROUPS: SolutionGroup[] = [
       "Cursor",
       "JetBrains",
       "Kiro",
-      "Windsurf",
+      "Windsurf (Devin AI)",
       "Kimi"
     ]
   },
@@ -63,7 +63,7 @@ export const SOLUTION_GROUPS: SolutionGroup[] = [
       "Scenario",
       "Yeri",
       "Gen-4.5 Runway",
-      "hailuo",
+      "hailuo (하이루오)",
       "Ludo AI",
       "Novel AI"
     ]

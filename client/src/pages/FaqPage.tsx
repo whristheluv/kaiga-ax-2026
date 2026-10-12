@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { FAQ_DATA } from '@/data/faqData';
+import { FAQ_DATA, FAQ_ALIASES } from '@/data/faqData';
 import {
   Check,
   ChevronDown,
@@ -16,32 +16,43 @@ import { Link } from 'wouter';
 import { toast } from 'sonner';
 
 const CATEGORIES = ['전체', '사업 안내', '정산·지원금', '서류·증빙', 'AI 솔루션', '계정·인원'] as const;
-const QUICK_SEARCHES = ['제출기한', '환율', '4대보험', '카드 영수증', '연간 결제', '좌석 추가'];
+const QUICK_SEARCHES = ['제출기한', 'PDF', '4대보험', '지원기간', '연간', '크레딧'];
 
 type Category = (typeof CATEGORIES)[number];
 
+function resolveHash() {
+  const hash = window.location.hash.slice(1);
+  const id = FAQ_ALIASES[hash] ?? hash;
+  return FAQ_DATA.find((item) => item.id === id || item.numericId === hash);
+}
+
 export default function FaqPage() {
-  const [selectedCategory, setSelectedCategory] = useState<Category>('전체');
-  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState<Category>(() => {
+    const category = new URLSearchParams(window.location.search).get('category');
+    return !resolveHash() && CATEGORIES.includes(category as Category) ? category as Category : '전체';
+  });
+  const [searchQuery, setSearchQuery] = useState(() => resolveHash() ? '' : new URLSearchParams(window.location.search).get('q') ?? '');
   const [openItems, setOpenItems] = useState<Record<string, boolean>>({});
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const qParam = params.get('q');
-    const categoryParam = params.get('category');
-    if (qParam) setSearchQuery(qParam);
-    if (categoryParam && CATEGORIES.includes(categoryParam as Category)) {
-      setSelectedCategory(categoryParam as Category);
-    }
-
-    const hash = window.location.hash.replace('#', '');
-    const item = FAQ_DATA.find((faq) => faq.id === hash || faq.numericId === hash);
-    if (item) {
-      setOpenItems({ [item.id]: true });
-      window.setTimeout(() => document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth', block: 'center' }), 250);
-    }
+    let timer: number | undefined;
+    const openLinkedItem = () => {
+      const item = resolveHash();
+      if (!item) return;
+      setSelectedCategory('전체');
+      setSearchQuery('');
+      setOpenItems((current) => ({ ...current, [item.id]: true }));
+      window.clearTimeout(timer);
+      timer = window.setTimeout(() => document.getElementById(item.id)?.scrollIntoView({
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+        block: 'center',
+      }), 100);
+    };
+    openLinkedItem();
+    window.addEventListener('hashchange', openLinkedItem);
+    return () => { window.clearTimeout(timer); window.removeEventListener('hashchange', openLinkedItem); };
   }, []);
 
   useEffect(() => {
@@ -85,11 +96,15 @@ export default function FaqPage() {
     setOpenItems((current) => ({ ...current, [id]: !current[id] }));
   };
 
-  const handleCopyLink = (id: string) => {
-    navigator.clipboard.writeText(`${window.location.origin}/faq/#${id}`);
-    setCopiedId(id);
-    toast.success('해당 질문 바로가기 링크가 복사되었습니다.');
-    window.setTimeout(() => setCopiedId(null), 2000);
+  const handleCopyLink = async (id: string) => {
+    try {
+      await navigator.clipboard.writeText(`${window.location.origin}/faq/#${id}`);
+      setCopiedId(id);
+      toast.success('해당 질문 바로가기 링크가 복사되었습니다.');
+      window.setTimeout(() => setCopiedId(null), 2000);
+    } catch {
+      toast.error('링크를 복사하지 못했습니다. 브라우저의 클립보드 권한을 확인해 주세요.');
+    }
   };
 
   const resetFilters = () => {
@@ -111,7 +126,8 @@ export default function FaqPage() {
               </div>
               <h1 className="text-3xl font-black tracking-tight sm:text-5xl">자주 묻는 질문</h1>
               <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
-                사업 참여와 월간 정산 과정에서 자주 확인하는 답변을 검색하고, 카테고리별로 빠르게 찾아보세요.
+                제출 일정, 결제 증빙, 이용기간 계산과 AI 활용내역을 확인하세요.<br />
+                기업별 지원기간과 공식 솔루션 목록을 기준으로 안내합니다.
               </p>
             </div>
           </div>
@@ -138,7 +154,7 @@ export default function FaqPage() {
                 type="search"
                 value={searchQuery}
                 onChange={(event) => setSearchQuery(event.target.value)}
-                placeholder="검색어를 입력해 주세요 (예: 인감, 4대보험, 환율)"
+                placeholder="검색어를 입력해 주세요 (예: PDF, 4대보험, 크레딧)"
                 className="w-full rounded-xl border border-slate-200 bg-slate-50 py-3.5 pl-11 pr-20 text-sm text-slate-900 outline-none transition focus:border-purple-400 focus:bg-white focus:ring-4 focus:ring-purple-100"
               />
               {searchQuery && (
@@ -162,13 +178,13 @@ export default function FaqPage() {
             <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-500">
               <Filter className="h-4 w-4 text-purple-600" />
               <span>카테고리</span>
-              <span className="ml-auto font-semibold normal-case tracking-normal text-purple-700">{filteredItems.length}개 표시</span>
+              <span role="status" aria-live="polite" className="ml-auto font-semibold normal-case tracking-normal text-purple-700">{filteredItems.length}개 표시</span>
             </div>
             <div className="mt-3 flex gap-2 overflow-x-auto pb-2 scrollbar-none">
               {CATEGORIES.map((category) => {
                 const selected = selectedCategory === category;
                 return (
-                  <button key={category} type="button" onClick={() => setSelectedCategory(category)} className={`flex shrink-0 items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition ${selected ? 'border-purple-700 bg-purple-700 text-white shadow-md shadow-purple-700/20' : 'border-slate-200 bg-white text-slate-600 hover:border-purple-300 hover:text-purple-700'}`}>
+                  <button key={category} type="button" aria-pressed={selected} onClick={() => setSelectedCategory(category)} className={`flex shrink-0 items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition ${selected ? 'border-purple-700 bg-purple-700 text-white shadow-md shadow-purple-700/20' : 'border-slate-200 bg-white text-slate-600 hover:border-purple-300 hover:text-purple-700'}`}>
                     <span>{category}</span>
                     <span className={`rounded-full px-1.5 py-0.5 text-[11px] ${selected ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-500'}`}>{categoryCounts[category]}</span>
                   </button>
@@ -196,20 +212,19 @@ export default function FaqPage() {
               const isCopied = copiedId === item.id;
               return (
                 <article key={item.id} id={item.id} className={`kaiga-glass scroll-mt-28 overflow-hidden rounded-xl border bg-white transition ${isOpen ? 'border-purple-300 shadow-lg shadow-purple-900/8' : 'border-slate-200 hover:border-slate-300'}`}>
-                  <button type="button" onClick={() => toggleItem(item.id)} aria-expanded={isOpen} className="flex w-full items-center gap-3 px-4 py-4 text-left sm:px-5">
+                  <button id={`${item.id}-trigger`} type="button" onClick={() => toggleItem(item.id)} aria-expanded={isOpen} aria-controls={`${item.id}-answer`} className="flex w-full items-center gap-3 px-4 py-4 text-left sm:px-5">
                     <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-purple-100 text-xs font-black text-purple-800">Q</span>
                     <span className="min-w-0 flex-1">
                       <span className="mb-1 flex flex-wrap items-center gap-2">
                         <span className="rounded-md bg-slate-100 px-2 py-0.5 text-[11px] font-semibold text-slate-500">{item.category}</span>
-                        <span className="font-mono text-[11px] text-slate-400">#{item.numericId}</span>
+                        <span className="font-mono text-[11px] text-slate-500">{String(FAQ_DATA.indexOf(item) + 1).padStart(2, '0')}</span>
                       </span>
                       <span className="block text-sm font-bold leading-6 text-slate-900 sm:text-base">{item.question}</span>
                     </span>
                     <ChevronDown className={`h-5 w-5 shrink-0 text-slate-400 transition-transform ${isOpen ? 'rotate-180 text-purple-700' : ''}`} />
                   </button>
 
-                  {isOpen && (
-                    <div className="border-t border-slate-100 bg-[#fbfbfe] px-4 pb-5 pt-4 sm:px-5">
+                    <div id={`${item.id}-answer`} role="region" aria-labelledby={`${item.id}-trigger`} hidden={!isOpen} className="border-t border-slate-100 bg-white px-4 pb-5 pt-4 sm:px-5">
                       <div className="flex items-start gap-3">
                         <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-indigo-100 text-xs font-black text-indigo-800">A</span>
                         <div className="min-w-0 flex-1">
@@ -224,7 +239,6 @@ export default function FaqPage() {
                         </div>
                       </div>
                     </div>
-                  )}
                 </article>
               );
             })}

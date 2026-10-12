@@ -3,8 +3,9 @@ import { Link } from 'wouter';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
-import { FAQ_DATA, FaqItem } from '@/data/faqData';
+import { FAQ_DATA, FAQ_COUNT, FaqItem } from '@/data/faqData';
 import { SOLUTION_GROUPS, SOLUTION_COUNT, NOTICE_ROUNDS } from '@/data/businessData';
+import { OFFICIAL_SOLUTIONS } from '@/data/officialSolutions';
 import {
   Search,
   ArrowRight,
@@ -123,7 +124,7 @@ export default function Home() {
                   className="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-semibold text-sm border border-slate-200 shadow-xs transition-all active:scale-[0.98]"
                 >
                   <HelpCircle className="w-4 h-4 mr-1.5 text-purple-600" />
-                  <span>전체 QnA 59개 확인</span>
+                  <span>전체 QnA {FAQ_COUNT}개 확인</span>
                 </Link>
 
                 <Link
@@ -157,7 +158,7 @@ export default function Home() {
                   href="/faq/"
                   className="inline-flex items-center gap-1 text-sm font-semibold text-purple-700 hover:text-purple-900 transition-colors"
                 >
-                  <span>전체 질문 목록 (59개)</span>
+                  <span>전체 질문 목록 ({FAQ_COUNT}개)</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -249,7 +250,7 @@ export default function Home() {
                       href="/faq/"
                       className="text-xs font-semibold text-purple-700 hover:underline"
                     >
-                      전체 59개 질문 목록에서 찾아보기
+                      전체 {FAQ_COUNT}개 질문 목록에서 찾아보기
                     </Link>
                   </div>
                 )}
@@ -430,7 +431,8 @@ export default function Home() {
                 게임 제작의 모든 과정에, 지원 AI 솔루션 {SOLUTION_COUNT}종
               </h2>
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                기획, 아트, 프로그래밍, 3D 모델링, 사운드 등 파이프라인 전 분야를 지원합니다.
+                공식 지원 목록에 기재된 솔루션만 지원합니다.<br />
+                솔루션명을 누르면 지원개시일과 증빙 조건을 확인할 수 있습니다.
               </p>
               <div className="mt-4 inline-flex items-center gap-2">
                 <a
@@ -463,14 +465,18 @@ export default function Home() {
                   </div>
 
                   <div className="flex flex-wrap gap-1.5">
-                    {group.chips.map((chip, cIdx) => (
-                      <span
-                        key={cIdx}
-                        className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-white text-slate-600 border border-slate-200 shadow-2xs hover:border-purple-300 hover:text-purple-700 transition-colors"
-                      >
-                        {chip}
-                      </span>
-                    ))}
+                    {group.chips.map((chip) => {
+                      const official = OFFICIAL_SOLUTIONS.find((item) => item.name === chip);
+                      return (
+                        <details key={chip} className="solution-detail max-w-full rounded-md border border-slate-200 bg-white text-xs text-slate-700 open:w-full open:border-purple-300">
+                          <summary className="cursor-pointer px-2.5 py-2 font-semibold hover:text-purple-700">{chip}</summary>
+                          <div className="border-t border-slate-200 px-3 py-3 leading-6">
+                            <p>{official?.region} · 지원개시일 {official?.startDate}</p>
+                            {official?.note && <p className="mt-2 whitespace-pre-line break-words">{official.note}</p>}
+                          </div>
+                        </details>
+                      );
+                    })}
                   </div>
                 </div>
               ))}
@@ -595,7 +601,7 @@ export default function Home() {
               사업에 대해 더 궁금하신가요?
             </h2>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-none mx-auto mb-8 lg:whitespace-nowrap">
-              정산 지침과 자주 묻는 59개 질문을 확인하고, 추가 문의사항은 사업기획실로 편하게 문의하세요.
+              정산 지침과 자주 묻는 {FAQ_COUNT}개 질문을 확인하고, 추가 문의사항은 사업기획실로 편하게 문의하세요.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-3.5 mb-10">

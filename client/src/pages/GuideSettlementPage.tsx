@@ -1,3 +1,4 @@
+import { FAQ_COUNT } from "@/data/faqData";
 import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -298,7 +299,7 @@ export default function GuideSettlementPage() {
                 )}
                 {copied ? "양식 링크 복사됨" : "양식 링크 복사"}
               </button>
-              <Link href="/faq/">자주 묻는 질문 59개</Link>
+              <Link href="/faq/">자주 묻는 질문 {FAQ_COUNT}개</Link>
             </div>
             <p className="notebook-index-caption">
               KAIGA

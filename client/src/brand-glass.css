@@ -178,6 +178,33 @@
   }
 }
 
+.kaiga-faq :is(button, a):focus-visible,
+.solution-detail summary:focus-visible {
+  outline: 3px solid #6d28d9;
+  outline-offset: 3px;
+}
+.kaiga-faq article > button:focus-visible {
+  outline-offset: -3px;
+}
+.kaiga-faq .answer-text {
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+  word-break: keep-all;
+}
+.kaiga-faq .answer-text p + p {
+  margin-top: 1rem;
+}
+.kaiga-faq .answer-text code {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+@media (prefers-reduced-motion: reduce) {
+  .kaiga-faq *, .solution-detail * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* Give the three headline figures room without widening the hero copy. */
 .kaiga-site .home-support-stats {
   width: min(960px, calc(100vw - 48px));
