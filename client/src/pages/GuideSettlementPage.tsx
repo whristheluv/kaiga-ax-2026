@@ -220,7 +220,7 @@ export default function GuideSettlementPage() {
               <details className="settlement-common-notice" open>
                 <summary>정산 서류 공통 공지</summary>
                 <p>
-                  결제 1건에 대한 증빙자료를 PDF 파일 1개로 합쳐서 재제출해
+                  결제 1건에 대한 증빙자료를 PDF 파일 1개로 합쳐서 제출해
                   주시기 바랍니다.
                 </p>
                 <h3>1. 같은 결제 건의 자료를 하나로 합쳐 주세요.</h3>
