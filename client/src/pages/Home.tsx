@@ -88,7 +88,7 @@ export default function Home() {
               </p>
 
               {/* Stat Pill Grid */}
-              <div className="kaiga-glass grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 p-2 sm:p-3 bg-slate-50/80 backdrop-blur-md rounded-2xl border border-slate-200/80 shadow-xs max-w-2xl mx-auto mb-10">
+              <div className="home-support-stats kaiga-glass grid grid-cols-1 lg:grid-cols-3 gap-3 sm:gap-4 p-2 sm:p-3 bg-slate-50/80 backdrop-blur-md rounded-2xl border border-slate-200/80 shadow-xs max-w-2xl mx-auto mb-10">
                 <div className="kaiga-glass bg-white rounded-xl p-3.5 border border-slate-100 text-center shadow-xs flex flex-col items-center justify-center min-w-0">
                   <div className="text-xs text-slate-500 font-medium mb-1">지원 한도</div>
                   <div className="text-base sm:text-lg lg:text-xl leading-tight font-bold text-slate-900 whitespace-nowrap">최대 5,000만 원</div>
