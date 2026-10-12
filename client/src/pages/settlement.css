@@ -946,3 +946,40 @@
     padding: 16px;
   }
 }
+
+/* Document labels and navigation stay intact on one line. */
+.notebook-index nav > a {
+  white-space: nowrap;
+}
+.notebook-index nav > a > span:first-child {
+  flex-shrink: 0;
+}
+.notebook-chapter .guide-content .guide-docs > div {
+  grid-template-columns: max-content minmax(0, 1fr);
+}
+.notebook-chapter .guide-content .guide-docs dt {
+  white-space: nowrap;
+}
+.notebook-chapter .guide-content .guide-review strong {
+  font-size: 1.125rem;
+}
+.notebook-chapter .guide-content .guide-review span {
+  font-size: inherit;
+  line-height: 1.9;
+}
+.settlement-file-examples {
+  padding-left: 18px;
+}
+@media (max-width: 1023px) {
+  .notebook-chapter .guide-content .guide-docs > div {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 767px) {
+  .notebook-index nav {
+    grid-template-columns: 1fr;
+  }
+  .notebook-deadline {
+    grid-row: 1;
+  }
+}

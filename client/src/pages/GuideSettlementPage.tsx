@@ -27,7 +27,6 @@ const checklistItems = [
     id: "newcomer",
     label: "신규 참여자가 있다면 개인정보 동의서를 준비했습니다.",
   },
-  { id: "account", label: "지원금 수령계좌 확인자료를 준비했습니다." },
 ];
 const stages = [
   { id: "schedule", title: "일정 확인", detail: "협약기간과 제출기한" },
@@ -138,77 +137,8 @@ export default function GuideSettlementPage() {
           <div className="notebook-shell">
             <div className="notebook-edition">
               <span>KAIGA / AX SUPPORT</span>
-              <span>2026 — 실무 안내서</span>
+              <span>2026 KAIGA 정산 안내서</span>
             </div>
-            <section
-              className="settlement-submission"
-              aria-labelledby="september-title"
-            >
-              <h2 id="september-title">9월 사용분 정산 제출</h2>
-              <p>선정 차수에 맞는 링크로 정산 서류를 제출해 주세요.</p>
-              <div className="settlement-submission-links">
-                <a
-                  href="https://forms.gle/p5ZpyiReYZeZpQbF8"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  1·2차 9월 정산 제출 <span>(새 창)</span>
-                </a>
-                <a
-                  href="https://forms.gle/qpVJ1B8AuGKiWwe99"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  3·4차 9월 정산 제출 <span>(새 창)</span>
-                </a>
-              </div>
-              <details className="settlement-common-notice" open>
-                <summary>정산 서류 공통 공지</summary>
-                <p>
-                  2026년 게임제작환경 인공지능 전환(AX){" "}
-                  <a
-                    href="https://drive.google.com/drive/folders/1yZGpz_u_PEeuzXGQlL1k0bSMwFpSu64A?usp=drive_link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    정산보고서 양식 다운로드 (새 창)
-                  </a>
-                </p>
-                <h3>정산보고서 파일명</h3>
-                <p>
-                  <code>00. 기업명_09월_월간 정산보고서_2026AX지원사업</code>
-                  으로 제출해 주세요.
-                </p>
-                <p>
-                  예시:{" "}
-                  <code>00. kaiga_09월_월간 정산보고서_2026AX지원사업</code>
-                </p>
-                <h3>결제 건별 증빙 파일</h3>
-                <p>
-                  제출 서류는{" "}
-                  <strong>결제 건별로 하나의 PDF 파일로 병합하여 제출</strong>해
-                  주세요.
-                </p>
-                <p>
-                  1번 결제 건의 영수증·인보이스·거래내역을 합쳐{" "}
-                  <code>01. 계정_솔루션명_09월.pdf</code> 파일 한 개로
-                  제출하시면 됩니다.
-                </p>
-                <p>
-                  예시: <code>01. kaiga@abc.com_ChatGPT_09월.pdf</code>
-                </p>
-                <ol>
-                  <li>영수증</li>
-                  <li>인보이스</li>
-                  <li>거래내역</li>
-                </ol>
-                <p>
-                  <strong>
-                    각 서류를 별도의 파일로 제출하지 않도록 주의해 주세요.
-                  </strong>
-                </p>
-              </details>
-            </section>
             <div className="notebook-cover-grid">
               <div className="notebook-intro">
                 <h1 id="guide-title">정산 이용 가이드</h1>
@@ -265,6 +195,61 @@ export default function GuideSettlementPage() {
               </div>
               <SettlementDeadline />
             </div>
+            <section
+              className="settlement-submission"
+              aria-labelledby="september-title"
+            >
+              <h2 id="september-title">9월 사용분 정산 제출</h2>
+              <p>선정 차수에 맞는 링크로 정산 서류를 제출해 주세요.</p>
+              <div className="settlement-submission-links">
+                <a
+                  href="https://forms.gle/p5ZpyiReYZeZpQbF8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  1·2차 9월 정산 제출 <span>(새 창)</span>
+                </a>
+                <a
+                  href="https://forms.gle/qpVJ1B8AuGKiWwe99"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  3·4차 9월 정산 제출 <span>(새 창)</span>
+                </a>
+              </div>
+              <details className="settlement-common-notice" open>
+                <summary>정산 서류 공통 공지</summary>
+                <p>
+                  결제 1건에 대한 증빙자료를 PDF 파일 1개로 합쳐서 재제출해
+                  주시기 바랍니다.
+                </p>
+                <h3>1. 같은 결제 건의 자료를 하나로 합쳐 주세요.</h3>
+                <p>
+                  해당 결제의 영수증, 인보이스, 카드 결제 내역, 계정 및 구독
+                  정보 화면 등을 하나의 PDF 파일에 넣어 주세요.
+                </p>
+                <h3>2. 결제 건마다 파일을 따로 만들어 주세요.</h3>
+                <p>
+                  전체 자료를 한 파일로 합치는 것이 아니라, 결제 건별로 나누어
+                  만들어 주시면 됩니다.
+                  <br />
+                  같은 솔루션이라도 결제 건이 다르면 별도 파일로 작성해 주세요.
+                </p>
+                <h3>3. 파일명은 아래 형식으로 작성해 주세요.</h3>
+                <p>파일명 앞에 01, 02, 03… 순서로 번호를 붙여 주세요.</p>
+                <div className="settlement-file-examples">
+                  <p>
+                    <code>01. kaiga@abc.com_ChatGPT_09월.pdf</code>
+                  </p>
+                  <p>
+                    <code>02. kaiga@abc.com_Claude_09월.pdf</code>
+                  </p>
+                  <p>
+                    <code>03. kaiga@abc.com_SUNO_09월.pdf</code>
+                  </p>
+                </div>
+              </details>
+            </section>
             <nav className="notebook-stages" aria-label="정산 준비 단계">
               {stages.map((stage, i) => (
                 <a key={stage.id} href={`#${stage.id}`}>
@@ -298,7 +283,10 @@ export default function GuideSettlementPage() {
                 </a>
               ))}
               <a href="#submission-checklist" className="notebook-check-link">
-                제출 전 체크리스트 <span>{checkedItems.length}/6</span>
+                제출 전 체크리스트{" "}
+                <span>
+                  {checkedItems.length}/{checklistItems.length}
+                </span>
               </a>
             </nav>
             <div className="notebook-index-tools">
