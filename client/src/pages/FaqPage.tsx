@@ -98,21 +98,19 @@ export default function FaqPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#f8f8fc] text-slate-900 selection:bg-purple-100 selection:text-purple-900">
+    <div className="kaiga-faq min-h-screen flex flex-col bg-[#f8f8fc] text-slate-900 selection:bg-purple-100 selection:text-purple-900">
       <Header />
 
       <main className="flex-1 pt-20 pb-24">
-        <section className="relative overflow-hidden bg-[#101126] text-white">
-          <div className="absolute -right-24 -top-40 h-96 w-96 rounded-full bg-purple-600/25 blur-3xl" />
-          <div className="absolute -left-28 bottom-[-12rem] h-96 w-96 rounded-full bg-fuchsia-500/15 blur-3xl" />
+        <section className="faq-white-intro relative overflow-hidden">
           <div className="relative mx-auto max-w-6xl px-4 pb-12 pt-14 sm:px-6 lg:px-8 lg:pb-16 lg:pt-16">
             <div className="max-w-3xl">
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-xs font-semibold text-purple-100">
+              <div className="kaiga-glass mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-xs font-semibold text-purple-800">
                 <HelpCircle className="h-3.5 w-3.5" />
                 <span>2026 AX 지원사업 질의응답집</span>
               </div>
               <h1 className="text-3xl font-black tracking-tight sm:text-5xl">자주 묻는 질문</h1>
-              <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base">
+              <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
                 사업 참여와 월간 정산 과정에서 자주 확인하는 답변을 검색하고, 카테고리별로 빠르게 찾아보세요.
               </p>
             </div>
@@ -120,7 +118,7 @@ export default function FaqPage() {
         </section>
 
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <section className="relative z-10 -mt-6 rounded-2xl border border-slate-200 bg-white p-4 shadow-xl shadow-slate-900/8 sm:p-6">
+          <section className="kaiga-glass relative z-10 -mt-6 rounded-2xl border border-slate-200 bg-white p-4 shadow-xl shadow-slate-900/8 sm:p-6">
             <div className="flex items-center justify-between gap-3">
               <label htmlFor="faq-search" className="flex items-center gap-2 text-sm font-bold text-slate-900">
                 <Search className="h-4 w-4 text-purple-600" />
@@ -197,7 +195,7 @@ export default function FaqPage() {
               const isOpen = openItems[item.id] ?? false;
               const isCopied = copiedId === item.id;
               return (
-                <article key={item.id} id={item.id} className={`scroll-mt-28 overflow-hidden rounded-xl border bg-white transition ${isOpen ? 'border-purple-300 shadow-lg shadow-purple-900/8' : 'border-slate-200 hover:border-slate-300'}`}>
+                <article key={item.id} id={item.id} className={`kaiga-glass scroll-mt-28 overflow-hidden rounded-xl border bg-white transition ${isOpen ? 'border-purple-300 shadow-lg shadow-purple-900/8' : 'border-slate-200 hover:border-slate-300'}`}>
                   <button type="button" onClick={() => toggleItem(item.id)} aria-expanded={isOpen} className="flex w-full items-center gap-3 px-4 py-4 text-left sm:px-5">
                     <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-purple-100 text-xs font-black text-purple-800">Q</span>
                     <span className="min-w-0 flex-1">
@@ -232,7 +230,7 @@ export default function FaqPage() {
             })}
 
             {filteredItems.length === 0 && (
-              <div className="rounded-2xl border border-dashed border-slate-300 bg-white px-6 py-16 text-center">
+              <div className="kaiga-glass rounded-2xl border border-dashed border-slate-300 bg-white px-6 py-16 text-center">
                 <Sparkles className="mx-auto mb-3 h-8 w-8 text-purple-400" />
                 <h2 className="font-bold text-slate-900">일치하는 질문이 없습니다</h2>
                 <p className="mt-1 text-sm text-slate-500">검색어를 바꾸거나 다른 카테고리를 선택해 보세요.</p>
@@ -244,7 +242,7 @@ export default function FaqPage() {
             )}
           </div>
 
-          <div className="mt-10 flex flex-col items-start justify-between gap-4 rounded-2xl border border-purple-100 bg-purple-50/70 p-5 sm:flex-row sm:items-center sm:p-6">
+          <div className="kaiga-glass mt-10 flex flex-col items-start justify-between gap-4 rounded-2xl border border-purple-100 bg-purple-50/70 p-5 sm:flex-row sm:items-center sm:p-6">
             <div>
               <p className="text-sm font-bold text-purple-950">정산 작성 단계가 더 궁금하신가요?</p>
               <p className="mt-1 text-xs leading-5 text-purple-800/70">제출 일정부터 증빙 준비까지 정산 이용 가이드에서 순서대로 확인할 수 있습니다.</p>

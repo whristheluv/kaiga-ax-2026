@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Link } from 'wouter';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import PageIllustration from '@/components/PageIllustration';
+
 import { FAQ_DATA, FaqItem } from '@/data/faqData';
 import { SOLUTION_GROUPS, SOLUTION_COUNT, NOTICE_ROUNDS } from '@/data/businessData';
 import {
@@ -57,18 +57,18 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white overflow-x-hidden selection:bg-purple-100 selection:text-purple-900">
+    <div className="kaiga-home min-h-screen flex flex-col bg-white overflow-x-hidden selection:bg-purple-100 selection:text-purple-900">
       <Header />
 
       <main className="flex-1 relative pt-20">
-        <PageIllustration />
+
 
         {/* 1. HERO SECTION */}
         <section id="about" className="relative scroll-mt-24 pt-12 pb-20 md:pt-20 md:pb-28">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto">
               {/* Badge Kicker */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-50 border border-purple-200/80 text-purple-800 text-xs sm:text-sm font-semibold shadow-xs mb-6 animate-in fade-in duration-500">
+              <div className="kaiga-glass inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-50 border border-purple-200/80 text-purple-800 text-xs sm:text-sm font-semibold shadow-xs mb-6 animate-in fade-in duration-500">
                 <span className="flex h-2 w-2 rounded-full bg-purple-600 animate-pulse" />
                 <span>2026 · 한국인공지능게임협회 (KAIGA)</span>
               </div>
@@ -88,20 +88,20 @@ export default function Home() {
               </p>
 
               {/* Stat Pill Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 p-2 sm:p-3 bg-slate-50/80 backdrop-blur-md rounded-2xl border border-slate-200/80 shadow-xs max-w-2xl mx-auto mb-10">
-                <div className="bg-white rounded-xl p-3.5 border border-slate-100 text-center shadow-xs flex flex-col items-center justify-center min-w-0">
+              <div className="kaiga-glass grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 p-2 sm:p-3 bg-slate-50/80 backdrop-blur-md rounded-2xl border border-slate-200/80 shadow-xs max-w-2xl mx-auto mb-10">
+                <div className="kaiga-glass bg-white rounded-xl p-3.5 border border-slate-100 text-center shadow-xs flex flex-col items-center justify-center min-w-0">
                   <div className="text-xs text-slate-500 font-medium mb-1">지원 한도</div>
                   <div className="text-base sm:text-lg lg:text-xl leading-tight font-bold text-slate-900 whitespace-nowrap">최대 5,000만 원</div>
                   <div className="text-[11px] leading-tight text-purple-700 font-medium mt-1 whitespace-nowrap">기업 규모별 차등 지원</div>
                 </div>
 
-                <div className="bg-white rounded-xl p-3.5 border border-slate-100 text-center shadow-xs flex flex-col items-center justify-center min-w-0">
+                <div className="kaiga-glass bg-white rounded-xl p-3.5 border border-slate-100 text-center shadow-xs flex flex-col items-center justify-center min-w-0">
                   <div className="text-xs text-slate-500 font-medium mb-1">지원 비율</div>
                   <div className="text-base sm:text-lg lg:text-xl leading-tight font-bold text-slate-900 whitespace-nowrap">국내 100% · 해외 90%</div>
                   <div className="text-[11px] leading-tight text-purple-700 font-medium mt-1 whitespace-nowrap">VAT 제외 공급가 기준</div>
                 </div>
 
-                <div className="bg-white rounded-xl p-3.5 border border-slate-100 text-center shadow-xs flex flex-col items-center justify-center min-w-0">
+                <div className="kaiga-glass bg-white rounded-xl p-3.5 border border-slate-100 text-center shadow-xs flex flex-col items-center justify-center min-w-0">
                   <div className="text-xs text-slate-500 font-medium mb-1">지원 솔루션</div>
                   <div className="text-base sm:text-lg lg:text-xl leading-tight font-bold text-slate-900 whitespace-nowrap">총 {SOLUTION_COUNT}종</div>
                   <div className="text-[11px] leading-tight text-purple-700 font-medium mt-1 whitespace-nowrap">기존 62종 + 추가 8종</div>
@@ -141,7 +141,7 @@ export default function Home() {
         {/* 2. QUICK QNA SEARCH SECTION */}
         <section className="relative pb-20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-gradient-to-b from-white to-purple-50/40 rounded-3xl border border-purple-200/80 p-6 sm:p-8 lg:p-10 shadow-lg shadow-purple-900/5 backdrop-blur-md">
+            <div className="kaiga-glass bg-gradient-to-b from-white to-purple-50/40 rounded-3xl border border-purple-200/80 p-6 sm:p-8 lg:p-10 shadow-lg shadow-purple-900/5 backdrop-blur-md">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
                 <div>
                   <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-purple-700 mb-1">
@@ -243,7 +243,7 @@ export default function Home() {
                 ))}
 
                 {quickResults.length === 0 && (
-                  <div className="text-center py-10 bg-white rounded-xl border border-dashed border-slate-200">
+                  <div className="kaiga-glass text-center py-10 bg-white rounded-xl border border-dashed border-slate-200">
                     <p className="text-sm text-slate-500 mb-2">일치하는 질문을 찾지 못했습니다.</p>
                     <Link
                       href="/faq/"
@@ -276,7 +276,7 @@ export default function Home() {
             {/* Grid 4 tiers */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {/* 1~2인 */}
-              <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs hover:shadow-md hover:border-purple-300 transition-all flex flex-col justify-between">
+              <div className="kaiga-glass bg-white rounded-2xl p-6 border border-slate-200 shadow-xs hover:shadow-md hover:border-purple-300 transition-all flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <span className="px-2.5 py-1 rounded-md bg-purple-50 text-purple-700 text-xs font-bold">
@@ -304,7 +304,7 @@ export default function Home() {
               </div>
 
               {/* 3~10인 */}
-              <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs hover:shadow-md hover:border-purple-300 transition-all flex flex-col justify-between">
+              <div className="kaiga-glass bg-white rounded-2xl p-6 border border-slate-200 shadow-xs hover:shadow-md hover:border-purple-300 transition-all flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <span className="px-2.5 py-1 rounded-md bg-purple-50 text-purple-700 text-xs font-bold">
@@ -332,7 +332,7 @@ export default function Home() {
               </div>
 
               {/* 11~20인 */}
-              <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs hover:shadow-md hover:border-purple-300 transition-all flex flex-col justify-between">
+              <div className="kaiga-glass bg-white rounded-2xl p-6 border border-slate-200 shadow-xs hover:shadow-md hover:border-purple-300 transition-all flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <span className="px-2.5 py-1 rounded-md bg-purple-50 text-purple-700 text-xs font-bold">
@@ -360,7 +360,7 @@ export default function Home() {
               </div>
 
               {/* 21인 이상 */}
-              <div className="bg-purple-900 text-white rounded-2xl p-6 border border-purple-800 shadow-md flex flex-col justify-between relative overflow-hidden">
+              <div className="kaiga-glass bg-purple-900 text-white rounded-2xl p-6 border border-purple-800 shadow-md flex flex-col justify-between relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-purple-700/40 rounded-full blur-2xl pointer-events-none" />
                 <div>
                   <div className="flex items-center justify-between mb-4">
@@ -390,25 +390,25 @@ export default function Home() {
             </div>
 
             {/* Eligibility requirements */}
-            <div className="mt-14 max-w-4xl mx-auto bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/90 shadow-xs">
+            <div className="kaiga-glass mt-14 max-w-4xl mx-auto bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/90 shadow-xs">
               <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
                 <ShieldCheck className="w-5 h-5 text-purple-600" />
                 <span>신청 전 필수 확인 사항</span>
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-slate-600">
-                <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                <div className="kaiga-glass p-4 rounded-xl bg-slate-50 border border-slate-100">
                   <h4 className="font-semibold text-slate-900 mb-2">게임 사업자 요건</h4>
                   <p className="leading-relaxed text-xs sm:text-sm">
                     게임산업진흥에 관한 법률 제21조에 따른 게임제작업 또는 게임배급업으로 등록된 사업자여야 합니다.
                   </p>
                 </div>
-                <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                <div className="kaiga-glass p-4 rounded-xl bg-slate-50 border border-slate-100">
                   <h4 className="font-semibold text-slate-900 mb-2">중복 지원 제한</h4>
                   <p className="leading-relaxed text-xs sm:text-sm">
                     동일한 과제 또는 유사 사업으로 정부·지자체 지원금을 중복 수령하는 경우 선정이 취소될 수 있습니다.
                   </p>
                 </div>
-                <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                <div className="kaiga-glass p-4 rounded-xl bg-slate-50 border border-slate-100">
                   <h4 className="font-semibold text-slate-900 mb-2">체납·지원 제한 확인</h4>
                   <p className="leading-relaxed text-xs sm:text-sm">
                     국세·지방세 체납 사실이 있거나 정부 지원사업 참여제한 제재를 받고 있는 기업은 신청할 수 없습니다.
@@ -552,7 +552,7 @@ export default function Home() {
                 선정 후, 이렇게 지원받습니다
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs relative">
+                <div className="kaiga-glass p-5 rounded-2xl bg-white border border-slate-200 shadow-xs relative">
                   <span className="text-xs font-bold text-purple-600 block mb-1">STEP 01</span>
                   <h4 className="font-bold text-slate-900 mb-2">협약 체결</h4>
                   <p className="text-xs text-slate-600 leading-relaxed">
@@ -560,7 +560,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs relative">
+                <div className="kaiga-glass p-5 rounded-2xl bg-white border border-slate-200 shadow-xs relative">
                   <span className="text-xs font-bold text-purple-600 block mb-1">STEP 02</span>
                   <h4 className="font-bold text-slate-900 mb-2">AI 사용·결제</h4>
                   <p className="text-xs text-slate-600 leading-relaxed">
@@ -568,7 +568,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs relative">
+                <div className="kaiga-glass p-5 rounded-2xl bg-white border border-slate-200 shadow-xs relative">
                   <span className="text-xs font-bold text-purple-600 block mb-1">STEP 03</span>
                   <h4 className="font-bold text-slate-900 mb-2">월별 정산 청구</h4>
                   <p className="text-xs text-slate-600 leading-relaxed">
@@ -576,7 +576,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs relative">
+                <div className="kaiga-glass p-5 rounded-2xl bg-white border border-slate-200 shadow-xs relative">
                   <span className="text-xs font-bold text-purple-600 block mb-1">STEP 04</span>
                   <h4 className="font-bold text-slate-900 mb-2">검토 후 지급</h4>
                   <p className="text-xs text-slate-600 leading-relaxed">

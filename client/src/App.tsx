@@ -67,8 +67,10 @@ export default function App() {
     <ErrorBoundary>
       <TooltipProvider>
         <Toaster position="top-right" />
-        <Router />
-        <ScrollManager />
+        <div className="kaiga-site">
+          <Router />
+          <ScrollManager />
+        </div>
       </TooltipProvider>
     </ErrorBoundary>
   );

@@ -243,8 +243,9 @@ export default function GuideSettlementPage() {
                     </li>
                   </ol>
                   <p>
-                    파일명은 예시입니다. 제출 형식과 접수처는 협회 안내를
-                    확인하세요.
+                    파일명은 예시입니다.
+                    <br />
+                    제출 형식과 접수처는 협회 안내를 확인하세요.
                   </p>
                 </section>
                 <div className="notebook-actions">
@@ -371,8 +372,9 @@ export default function GuideSettlementPage() {
                 </label>
               ))}
               <p className="notebook-checklist-note">
-                체크 상태는 이 브라우저에만 저장됩니다. 해당하지 않는 항목은
-                건너뛰어도 됩니다.
+                체크 상태는 이 브라우저에만 저장됩니다.
+                <br />
+                해당하지 않는 항목은 건너뛰어도 됩니다.
               </p>
             </section>
             <div className="notebook-help">
