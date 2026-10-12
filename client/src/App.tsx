@@ -44,11 +44,12 @@ function ScrollManager() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  if (!showBackToTop) return null;
+
   return (
     <button
       type="button"
       aria-label="맨 위로 이동"
-      hidden={!showBackToTop}
       className={`fixed bottom-5 right-4 z-40 inline-flex h-11 w-11 items-center justify-center rounded-full bg-purple-700 text-white shadow-lg shadow-purple-900/20 transition-all duration-200 hover:bg-purple-800 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 md:hidden ${showBackToTop ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-3 opacity-0"}`}
       onClick={() =>
         window.scrollTo({

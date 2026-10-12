@@ -859,3 +859,12 @@
     font-size: 24px;
   }
 }
+.notebook-stages div > span,
+.notebook-chapter .guide-content .guide-flow span,
+.notebook-chapter .guide-pdf-step span:not(.guide-step-index) {
+  color: #625669;
+  font-size: 13px;
+}
+.notebook-chapter .guide-pdf-step code {
+  font-size: 13px;
+}
