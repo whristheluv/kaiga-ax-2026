@@ -955,7 +955,7 @@
   flex-shrink: 0;
 }
 .notebook-chapter .guide-content .guide-docs > div {
-  grid-template-columns: max-content minmax(0, 1fr);
+  grid-template-columns: 190px minmax(0, 1fr);
 }
 .notebook-chapter .guide-content .guide-docs dt {
   white-space: nowrap;
