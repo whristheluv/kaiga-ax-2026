@@ -99,7 +99,7 @@ export default function Home() {
                 <div className="kaiga-glass bg-white rounded-xl p-3.5 border border-slate-100 text-center shadow-xs flex flex-col items-center justify-center min-w-0">
                   <div className="text-xs text-slate-500 font-medium mb-1">지원 비율</div>
                   <div className="text-base sm:text-lg lg:text-xl leading-tight font-bold text-slate-900 whitespace-nowrap">국내 100% · 해외 90%</div>
-                  <div className="text-[11px] leading-tight text-purple-700 font-medium mt-1 whitespace-nowrap">VAT 제외 공급가 기준</div>
+                  <div className="text-[11px] leading-tight text-purple-700 font-medium mt-1 whitespace-nowrap">국내는 부가세 제외 공급가액 기준</div>
                 </div>
 
                 <div className="kaiga-glass bg-white rounded-xl p-3.5 border border-slate-100 text-center shadow-xs flex flex-col items-center justify-center min-w-0">
