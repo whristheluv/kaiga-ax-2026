@@ -154,23 +154,6 @@ export default function Footer() {
         {/* Bottom copyright */}
         <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <p>© 2026 한국인공지능게임협회 (KAIGA). All rights reserved.</p>
-          <nav
-            aria-label="이용 정책"
-            className="flex flex-wrap justify-center gap-4"
-          >
-            <Link
-              href="/terms/"
-              className="underline underline-offset-4 hover:text-white"
-            >
-              이용약관
-            </Link>
-            <Link
-              href="/privacy/"
-              className="underline underline-offset-4 hover:text-white"
-            >
-              개인정보처리방침
-            </Link>
-          </nav>
           <p className="flex items-center gap-1">
             <span>참여기업 전용 안내 및 질의응답 포털</span>
           </p>

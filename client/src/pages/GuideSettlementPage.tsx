@@ -17,7 +17,7 @@ const checklistItems = [
   {
     id: "proof",
     label:
-      "결제 건별 증빙 PDF를 Invoice → Receipt → 카드전표 순서로 준비했습니다.",
+      "결제 건별 증빙 PDF를 영수증 → 인보이스 → 거래내역 순서로 준비했습니다.",
   },
   {
     id: "people",
@@ -115,7 +115,9 @@ export default function GuideSettlementPage() {
   }, []);
   const copyForm = async () => {
     try {
-      await navigator.clipboard.writeText("https://bit.ly/4xZ2YJu");
+      await navigator.clipboard.writeText(
+        "https://drive.google.com/drive/folders/1yZGpz_u_PEeuzXGQlL1k0bSMwFpSu64A?usp=drive_link"
+      );
       setCopied(true);
       toast.success("정산서 양식함 링크가 복사되었습니다.");
     } catch {
@@ -138,6 +140,75 @@ export default function GuideSettlementPage() {
               <span>KAIGA / AX SUPPORT</span>
               <span>2026 — 실무 안내서</span>
             </div>
+            <section
+              className="settlement-submission"
+              aria-labelledby="september-title"
+            >
+              <h2 id="september-title">9월 사용분 정산 제출</h2>
+              <p>선정 차수에 맞는 링크로 정산 서류를 제출해 주세요.</p>
+              <div className="settlement-submission-links">
+                <a
+                  href="https://forms.gle/p5ZpyiReYZeZpQbF8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  1·2차 9월 정산 제출 <span>(새 창)</span>
+                </a>
+                <a
+                  href="https://forms.gle/qpVJ1B8AuGKiWwe99"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  3·4차 9월 정산 제출 <span>(새 창)</span>
+                </a>
+              </div>
+              <details className="settlement-common-notice" open>
+                <summary>정산 서류 공통 공지</summary>
+                <p>
+                  2026년 게임제작환경 인공지능 전환(AX){" "}
+                  <a
+                    href="https://drive.google.com/drive/folders/1yZGpz_u_PEeuzXGQlL1k0bSMwFpSu64A?usp=drive_link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    정산보고서 양식 다운로드 (새 창)
+                  </a>
+                </p>
+                <h3>정산보고서 파일명</h3>
+                <p>
+                  <code>00. 기업명_09월_월간 정산보고서_2026AX지원사업</code>
+                  으로 제출해 주세요.
+                </p>
+                <p>
+                  예시:{" "}
+                  <code>00. kaiga_09월_월간 정산보고서_2026AX지원사업</code>
+                </p>
+                <h3>결제 건별 증빙 파일</h3>
+                <p>
+                  제출 서류는{" "}
+                  <strong>결제 건별로 하나의 PDF 파일로 병합하여 제출</strong>해
+                  주세요.
+                </p>
+                <p>
+                  1번 결제 건의 영수증·인보이스·거래내역을 합쳐{" "}
+                  <code>01. 계정_솔루션명_09월.pdf</code> 파일 한 개로
+                  제출하시면 됩니다.
+                </p>
+                <p>
+                  예시: <code>01. kaiga@abc.com_ChatGPT_09월.pdf</code>
+                </p>
+                <ol>
+                  <li>영수증</li>
+                  <li>인보이스</li>
+                  <li>거래내역</li>
+                </ol>
+                <p>
+                  <strong>
+                    각 서류를 별도의 파일로 제출하지 않도록 주의해 주세요.
+                  </strong>
+                </p>
+              </details>
+            </section>
             <div className="notebook-cover-grid">
               <div className="notebook-intro">
                 <h1 id="guide-title">정산 이용 가이드</h1>
@@ -156,14 +227,14 @@ export default function GuideSettlementPage() {
                     <li>
                       <strong>자료 모으기</strong>
                       <span>
-                        Invoice → Receipt → 카드사 매출전표 순서로 보유 자료
-                        정리
+                        영수증 → 인보이스 → 거래내역 순서로 보유 자료 정리
                       </span>
                     </li>
                     <li>
                       <strong>PDF 하나로 병합</strong>
                       <span>
-                        파일명 예: <code>계정명_솔루션명_09월.pdf</code>
+                        파일명 예:{" "}
+                        <code>01. kaiga@abc.com_ChatGPT_09월.pdf</code>
                       </span>
                     </li>
                     <li>
@@ -179,7 +250,7 @@ export default function GuideSettlementPage() {
                 <div className="notebook-actions">
                   <a
                     className="notebook-button"
-                    href="https://bit.ly/4xZ2YJu"
+                    href="https://drive.google.com/drive/folders/1yZGpz_u_PEeuzXGQlL1k0bSMwFpSu64A?usp=drive_link"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

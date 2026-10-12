@@ -8,7 +8,6 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import Home from "./pages/Home";
 import FaqPage from "./pages/FaqPage";
 import GuideSettlementPage from "./pages/GuideSettlementPage";
-import { TermsPage, PrivacyPage } from "./pages/PolicyPage";
 
 function Router() {
   return (
@@ -18,10 +17,6 @@ function Router() {
       <Route path="/faq/" component={FaqPage} />
       <Route path="/guide/settlement" component={GuideSettlementPage} />
       <Route path="/guide/settlement/" component={GuideSettlementPage} />
-      <Route path="/terms" component={TermsPage} />
-      <Route path="/terms/" component={TermsPage} />
-      <Route path="/privacy" component={PrivacyPage} />
-      <Route path="/privacy/" component={PrivacyPage} />
       <Route path="/404" component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

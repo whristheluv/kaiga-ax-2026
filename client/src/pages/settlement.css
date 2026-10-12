@@ -868,3 +868,81 @@
 .notebook-chapter .guide-pdf-step code {
   font-size: 13px;
 }
+.settlement-submission {
+  padding: 26px 0;
+  border-bottom: 1px solid #cfc7d4;
+}
+.settlement-submission h2 {
+  font-size: 24px;
+  font-weight: 800;
+}
+.settlement-submission > p {
+  margin-top: 6px;
+  color: #625669;
+  font-size: 14px;
+}
+.settlement-submission-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 18px 0;
+}
+.settlement-submission-links a {
+  padding: 14px 20px;
+  background: #6800ad;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 3px;
+}
+.settlement-submission-links span {
+  font-size: 12px;
+  font-weight: 400;
+  margin-left: 8px;
+}
+.settlement-common-notice {
+  border: 1px solid #cfc7d4;
+  padding: 18px 22px;
+  background: white;
+  font-size: 14px;
+  line-height: 1.9;
+}
+.settlement-common-notice summary {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 750;
+}
+.settlement-common-notice h3 {
+  font-size: 15px;
+  font-weight: 750;
+  margin-top: 18px;
+}
+.settlement-common-notice p {
+  margin-top: 8px;
+}
+.settlement-common-notice a {
+  color: #6800ad;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.settlement-common-notice code {
+  font-family: inherit;
+  overflow-wrap: anywhere;
+}
+.settlement-common-notice ol {
+  list-style: decimal;
+  padding-left: 24px;
+  margin: 12px 0;
+}
+.settlement-common-notice summary:focus-visible {
+  outline: 3px solid #6800ad;
+  outline-offset: 4px;
+}
+@media (max-width: 767px) {
+  .settlement-submission-links {
+    flex-direction: column;
+  }
+  .settlement-common-notice {
+    padding: 16px;
+  }
+}
