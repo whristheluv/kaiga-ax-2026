@@ -887,13 +887,19 @@
   gap: 12px;
   margin: 18px 0;
 }
-.settlement-submission-links a {
+.settlement-submission-links a,
+.settlement-submission-pending {
   padding: 14px 20px;
   background: #6800ad;
   color: white;
   font-size: 15px;
   font-weight: 700;
   border-radius: 3px;
+}
+.settlement-submission-pending {
+  background: #f5f2f7;
+  color: #44344f;
+  border: 1px solid #d9d1df;
 }
 .settlement-submission-links span {
   font-size: 12px;

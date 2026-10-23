@@ -22,16 +22,16 @@ export const FAQ_DATA: FaqItem[] = [
     "numericId": "1-2",
     "category": "서류·증빙",
     "question": "정산서류 제출기한은 언제인가요?",
-    "answerHtml": "<div class=\"answer-text\"><p>사용한 달의 다음 달 <strong>1일부터 15일 23:59(KST)까지</strong> 제출해 주세요.<br/>예를 들어 9월 사용분은 10월 1일부터 15일까지 제출합니다.</p><p>협회가 별도 제출 일정을 안내한 경우에는 해당 일정을 따라 주세요.</p></div>",
-    "answerText": "사용한 달의 다음 달 1일부터 15일 23:59(KST)까지 제출해 주세요.\n예를 들어 9월 사용분은 10월 1일부터 15일까지 제출합니다.\n\n협회가 별도 제출 일정을 안내한 경우에는 해당 일정을 따라 주세요."
+    "answerHtml": "<div class=\"answer-text\"><p>사용한 달의 다음 달 <strong>1일부터 15일 23:59(KST)까지</strong> 제출해 주세요.<br/>예를 들어 10월 사용분은 11월 1일부터 15일까지 제출합니다.</p><p>협회가 별도 제출 일정을 안내한 경우에는 해당 일정을 따라 주세요.</p></div>",
+    "answerText": "사용한 달의 다음 달 1일부터 15일 23:59(KST)까지 제출해 주세요.\n예를 들어 10월 사용분은 11월 1일부터 15일까지 제출합니다.\n\n협회가 별도 제출 일정을 안내한 경우에는 해당 일정을 따라 주세요."
   },
   {
     "id": "q-60",
     "numericId": "4-60",
     "category": "서류·증빙",
-    "question": "9월 사용분 정산서류는 어디에 제출하나요?",
-    "answerHtml": "<div class=\"answer-text\"><p>선정 차수에 맞는 Google Form으로 제출해 주세요.</p><p><a href=\"https://forms.gle/p5ZpyiReYZeZpQbF8\" target=\"_blank\" rel=\"noopener noreferrer\">1·2차 기업 9월 정산 제출</a><br/><a href=\"https://forms.gle/qpVJ1B8AuGKiWwe99\" target=\"_blank\" rel=\"noopener noreferrer\">3·4차 기업 9월 정산 제출</a></p><p>다른 사용월의 접수처는 협회 안내를 확인해 주세요.</p></div>",
-    "answerText": "선정 차수에 맞는 Google Form으로 제출해 주세요.\n\n1·2차 기업 9월 정산 제출\n3·4차 기업 9월 정산 제출\n\n다른 사용월의 접수처는 협회 안내를 확인해 주세요."
+    "question": "10월 사용분 정산서류는 어디에 제출하나요?",
+    "answerHtml": "<div class=\"answer-text\"><p>10월 사용분 제출 기간은 <strong>2026년 11월 1일부터 15일 23:59(KST)까지</strong>입니다.</p><p>1·2차 기업: 제출 링크 준비 중<br/>3·4차 기업: 제출 링크 준비 중</p><p>10월 정산 제출 링크는 준비되는 대로 안내합니다.<br/>선정 차수에 맞는 접수처를 확인한 후 제출해 주세요.</p></div>",
+    "answerText": "10월 사용분 제출 기간은 2026년 11월 1일부터 15일 23:59(KST)까지입니다.\n\n1·2차 기업: 제출 링크 준비 중\n3·4차 기업: 제출 링크 준비 중\n\n10월 정산 제출 링크는 준비되는 대로 안내합니다.\n선정 차수에 맞는 접수처를 확인한 후 제출해 주세요."
   },
   {
     "id": "q-7",
@@ -62,8 +62,8 @@ export const FAQ_DATA: FaqItem[] = [
     "numericId": "4-62",
     "category": "서류·증빙",
     "question": "증빙 PDF 파일명은 어떻게 작성하나요?",
-    "answerHtml": "<div class=\"answer-text\"><p>파일명 앞에 01, 02, 03… 순서로 번호를 붙이고, 계정·솔루션명·사용월을 작성해 주세요.</p><p><code>01. kaiga@abc.com_ChatGPT_09월.pdf</code><br/><code>02. kaiga@abc.com_Claude_09월.pdf</code><br/><code>03. kaiga@abc.com_SUNO_09월.pdf</code></p><p>파일명에 적은 계정과 솔루션이 실제 증빙 내용과 일치하는지 확인해 주세요.</p></div>",
-    "answerText": "파일명 앞에 01, 02, 03… 순서로 번호를 붙이고, 계정·솔루션명·사용월을 작성해 주세요.\n\n01. kaiga@abc.com_ChatGPT_09월.pdf\n02. kaiga@abc.com_Claude_09월.pdf\n03. kaiga@abc.com_SUNO_09월.pdf\n\n파일명에 적은 계정과 솔루션이 실제 증빙 내용과 일치하는지 확인해 주세요."
+    "answerHtml": "<div class=\"answer-text\"><p>파일명 앞에 01, 02, 03… 순서로 번호를 붙이고, 계정·솔루션명·사용월을 작성해 주세요.</p><p><code>01. kaiga@abc.com_ChatGPT_10월.pdf</code><br/><code>02. kaiga@abc.com_Claude_10월.pdf</code><br/><code>03. kaiga@abc.com_SUNO_10월.pdf</code></p><p>파일명에 적은 계정과 솔루션이 실제 증빙 내용과 일치하는지 확인해 주세요.</p></div>",
+    "answerText": "파일명 앞에 01, 02, 03… 순서로 번호를 붙이고, 계정·솔루션명·사용월을 작성해 주세요.\n\n01. kaiga@abc.com_ChatGPT_10월.pdf\n02. kaiga@abc.com_Claude_10월.pdf\n03. kaiga@abc.com_SUNO_10월.pdf\n\n파일명에 적은 계정과 솔루션이 실제 증빙 내용과 일치하는지 확인해 주세요."
   },
   {
     "id": "q-15",
@@ -142,8 +142,8 @@ export const FAQ_DATA: FaqItem[] = [
     "numericId": "1-9",
     "category": "정산·지원금",
     "question": "지원 시작일 이후 결제한 월 구독도 매월 말일을 기준으로 나누나요?",
-    "answerHtml": "<div class=\"answer-text\"><p>지원 시작일 이후 결제했고 구독기간 전체가 기업의 지원기간에 포함되는 월 구독은 <strong>결제월에 결제액 전액을 반영</strong>합니다.<br/>예를 들어 지원기간 안의 9월 20일~10월 20일 월 구독은 9월 결제 건으로 제출하시면 됩니다.</p><p>이용기간이 다음 달까지 이어진다는 이유만으로 월말을 기준으로 나누지 않습니다.<br/>환불·차감 내역이 있으면 이를 반영해야 합니다.<br/>최종 지원금은 국내·해외 지원 기준에 따라 계산합니다.</p></div>",
-    "answerText": "지원 시작일 이후 결제했고 구독기간 전체가 기업의 지원기간에 포함되는 월 구독은 결제월에 결제액 전액을 반영합니다.\n예를 들어 지원기간 안의 9월 20일~10월 20일 월 구독은 9월 결제 건으로 제출하시면 됩니다.\n\n이용기간이 다음 달까지 이어진다는 이유만으로 월말을 기준으로 나누지 않습니다.\n환불·차감 내역이 있으면 이를 반영해야 합니다.\n최종 지원금은 국내·해외 지원 기준에 따라 계산합니다."
+    "answerHtml": "<div class=\"answer-text\"><p>지원 시작일 이후 결제했고 구독기간 전체가 기업의 지원기간에 포함되는 월 구독은 <strong>결제월에 결제액 전액을 반영</strong>합니다.<br/>예를 들어 지원기간 안의 10월 20일~11월 20일 월 구독은 10월 결제 건으로 제출하시면 됩니다.</p><p>이용기간이 다음 달까지 이어진다는 이유만으로 월말을 기준으로 나누지 않습니다.<br/>환불·차감 내역이 있으면 이를 반영해야 합니다.<br/>최종 지원금은 국내·해외 지원 기준에 따라 계산합니다.</p></div>",
+    "answerText": "지원 시작일 이후 결제했고 구독기간 전체가 기업의 지원기간에 포함되는 월 구독은 결제월에 결제액 전액을 반영합니다.\n예를 들어 지원기간 안의 10월 20일~11월 20일 월 구독은 10월 결제 건으로 제출하시면 됩니다.\n\n이용기간이 다음 달까지 이어진다는 이유만으로 월말을 기준으로 나누지 않습니다.\n환불·차감 내역이 있으면 이를 반영해야 합니다.\n최종 지원금은 국내·해외 지원 기준에 따라 계산합니다."
   },
   {
     "id": "q-64",
