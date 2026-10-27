@@ -45,7 +45,7 @@ export const SOLUTION_GROUPS: SolutionGroup[] = [
     ]
   },
   {
-    "title": "04 아트 19종 +",
+    "title": "04 아트 20종 +",
     "chips": [
       "Typecast",
       "Aether AI",
@@ -65,29 +65,33 @@ export const SOLUTION_GROUPS: SolutionGroup[] = [
       "Gen-4.5 Runway",
       "hailuo (하이루오)",
       "Ludo AI",
-      "Novel AI"
+      "Novel AI",
+      "modddif.com"
     ]
   },
   {
-    "title": "05 3D 에셋 5종 +",
+    "title": "05 3D 에셋 6종 +",
     "chips": [
       "PicoBerry",
       "Tencent HY 3D",
       "Tripo",
       "Meshy AI",
-      "Vox AI"
+      "Vox AI",
+      "Tripo API"
     ]
   },
   {
-    "title": "06 3D 에셋 애니메이션 3종 +",
+    "title": "06 3D 에셋 애니메이션 5종 +",
     "chips": [
       "comfy",
       "Higgsfield",
-      "BytePlus Seedance"
+      "BytePlus Seedance",
+      "Viggle.ai",
+      "riggy"
     ]
   },
   {
-    "title": "07 사운드 8종 +",
+    "title": "07 사운드 9종 +",
     "chips": [
       "Gamesound.ai",
       "AIVA",
@@ -96,7 +100,8 @@ export const SOLUTION_GROUPS: SolutionGroup[] = [
       "mix audio",
       "mureka.ai",
       "SUNO",
-      "CapCut"
+      "CapCut",
+      "mirelo.ai"
     ]
   },
   {

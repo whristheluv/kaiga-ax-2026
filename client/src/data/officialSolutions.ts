@@ -1,4 +1,4 @@
-// Official support list supplied by KAIGA, 2026-10-12.
+// Official support list supplied by KAIGA, updated 2026-10-27 (November additions).
 export const OFFICIAL_SOLUTIONS = [
   {
     "name": "ChatGPT",
@@ -418,6 +418,36 @@ export const OFFICIAL_SOLUTIONS = [
     "name": "Ace Studio",
     "region": "해외",
     "startDate": "2026.10.01",
+    "note": ""
+  },
+  {
+    "name": "Viggle.ai",
+    "region": "해외",
+    "startDate": "2026.11.01",
+    "note": ""
+  },
+  {
+    "name": "Tripo API",
+    "region": "해외",
+    "startDate": "2026.11.01",
+    "note": ""
+  },
+  {
+    "name": "riggy",
+    "region": "해외",
+    "startDate": "2026.11.01",
+    "note": ""
+  },
+  {
+    "name": "mirelo.ai",
+    "region": "해외",
+    "startDate": "2026.11.01",
+    "note": ""
+  },
+  {
+    "name": "modddif.com",
+    "region": "해외",
+    "startDate": "2026.11.01",
     "note": ""
   }
 ];

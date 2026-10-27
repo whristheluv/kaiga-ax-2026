@@ -105,7 +105,7 @@ export default function Home() {
                 <div className="kaiga-glass bg-white rounded-xl p-3.5 border border-slate-100 text-center shadow-xs flex flex-col items-center justify-center min-w-0">
                   <div className="text-xs text-slate-500 font-medium mb-1">지원 솔루션</div>
                   <div className="text-base sm:text-lg lg:text-xl leading-tight font-bold text-slate-900 whitespace-nowrap">총 {SOLUTION_COUNT}종</div>
-                  <div className="text-[11px] leading-tight text-purple-700 font-medium mt-1 whitespace-nowrap">기존 62종 + 추가 8종</div>
+                  <div className="text-[11px] leading-tight text-purple-700 font-medium mt-1 whitespace-nowrap">11월 1일부터 5종 추가 지원</div>
                 </div>
               </div>
 
@@ -432,6 +432,7 @@ export default function Home() {
               </h2>
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                 공식 지원 목록에 기재된 솔루션만 지원합니다.<br />
+                Viggle.ai, Tripo API, riggy, mirelo.ai, modddif.com은 2026년 11월 1일부터 지원합니다.<br />
                 솔루션명을 누르면 지원개시일과 증빙 조건을 확인할 수 있습니다.
               </p>
               <div className="mt-4 inline-flex items-center gap-2">
