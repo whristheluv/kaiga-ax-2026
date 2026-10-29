@@ -112,7 +112,7 @@ export const SOLUTION_GROUPS: SolutionGroup[] = [
     ]
   },
   {
-    "title": "09 게임개발통합 9종 +",
+    "title": "09 게임개발통합 17종 +",
     "chips": [
       "NC AI VARCO",
       "Hive (AI)",
@@ -122,12 +122,7 @@ export const SOLUTION_GROUPS: SolutionGroup[] = [
       "OpenRouter",
       "DeepL",
       "WhisperFlow",
-      "Unity AI"
-    ]
-  },
-  {
-    "title": "10 추가 지원 솔루션 8종 +",
-    "chips": [
+      "Unity AI",
       "Adobe Firefly",
       "Google AI Studio",
       "Google Gemini API",
