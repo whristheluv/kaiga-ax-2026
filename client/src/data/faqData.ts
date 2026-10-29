@@ -46,8 +46,8 @@ export const FAQ_DATA: FaqItem[] = [
     "numericId": "1-3",
     "category": "서류·증빙",
     "question": "정산 시 어떤 서류를 준비해야 하나요?",
-    "answerHtml": "<div class=\"answer-text\"><p>다음 자료를 준비해 주세요.</p><p>1. 월간 정산보고서<br/>2. 결제 건별 증빙 PDF<br/>3. 해당 정산 기간에 새로 발급한 4대보험 가입자명부<br/>4. 신규 참여자가 있는 경우 해당 인원의 개인정보 동의서</p><p>가입자가 없는 무보수 1인 대표 기업은 해당 정산 기간에 발급한 사업자등록증명으로 명부를 대체합니다.</p><p><a href=\"https://drive.google.com/drive/folders/1yZGpz_u_PEeuzXGQlL1k0bSMwFpSu64A?usp=drive_link\" target=\"_blank\" rel=\"noopener noreferrer\">월간 정산보고서 양식 다운로드</a></p></div>",
-    "answerText": "다음 자료를 준비해 주세요.\n\n1. 월간 정산보고서\n2. 결제 건별 증빙 PDF\n3. 해당 정산 기간에 새로 발급한 4대보험 가입자명부\n4. 신규 참여자가 있는 경우 해당 인원의 개인정보 동의서\n\n가입자가 없는 무보수 1인 대표 기업은 해당 정산 기간에 발급한 사업자등록증명으로 명부를 대체합니다.\n\n월간 정산보고서 양식 다운로드"
+    "answerHtml": "<div class=\"answer-text\"><p>다음 자료를 준비해 주세요.</p><p>1. 월간 정산보고서<br/>2. 결제 건별 증빙 PDF<br/>3. 11월에 발급한 4대보험 가입자명부(10월 사용분 정산 기준)<br/>4. 신규 참여자가 있는 경우 해당 인원의 개인정보 동의서</p><p>가입자가 없는 무보수 1인 대표 기업은 해당 정산 기간에 발급한 사업자등록증명으로 명부를 대체합니다.</p><p><a href=\"https://drive.google.com/drive/folders/1yZGpz_u_PEeuzXGQlL1k0bSMwFpSu64A?usp=drive_link\" target=\"_blank\" rel=\"noopener noreferrer\">월간 정산보고서 양식 다운로드</a></p></div>",
+    "answerText": "다음 자료를 준비해 주세요.\n\n1. 월간 정산보고서\n2. 결제 건별 증빙 PDF\n3. 11월에 발급한 4대보험 가입자명부(10월 사용분 정산 기준)\n4. 신규 참여자가 있는 경우 해당 인원의 개인정보 동의서\n\n가입자가 없는 무보수 1인 대표 기업은 해당 정산 기간에 발급한 사업자등록증명으로 명부를 대체합니다.\n\n월간 정산보고서 양식 다운로드"
   },
   {
     "id": "q-61",

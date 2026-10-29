@@ -245,6 +245,17 @@ export default function GuideSettlementPage() {
                     <code>03. kaiga@abc.com_SUNO_10월.pdf</code>
                   </p>
                 </div>
+                <h3>4대보험 가입자명부 제출 안내</h3>
+                <p>
+                  10월 사용분 정산 시에는 <strong>11월에 발급한 4대보험 가입자명부</strong>를 제출해 주세요.
+                  <br />
+                  국민연금·고용보험·산재보험 가입 여부를 확인할 수 있는 명부여야 합니다.
+                  <br />
+                  11월 발급분이 아닌 경우 보완 요청으로 정산 처리가 지연될 수 있습니다.
+                </p>
+                <p>
+                  4대보험 가입자가 없는 무보수 1인 대표는 해당 기간에 발급한 사업자등록증명으로 대체합니다.
+                </p>
               </details>
             </section>
             <nav className="notebook-stages" aria-label="정산 준비 단계">
