@@ -1,3 +1,5 @@
+import { useSettlementRelease } from "@/hooks/useSettlementRelease";
+import { getSettlementFaqAnswer } from "@/lib/settlementRelease";
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -27,6 +29,10 @@ function resolveHash() {
 }
 
 export default function FaqPage() {
+  const released = useSettlementRelease();
+  const faqItems = useMemo(() => FAQ_DATA.map(item => item.id === "q-60"
+    ? { ...item, ...getSettlementFaqAnswer(released, item.answerHtml, item.answerText) }
+    : item), [released]);
   const [selectedCategory, setSelectedCategory] = useState<Category>(() => {
     const category = new URLSearchParams(window.location.search).get('category');
     return !resolveHash() && CATEGORIES.includes(category as Category) ? category as Category : '전체';
@@ -76,13 +82,13 @@ export default function FaqPage() {
 
   const filteredItems = useMemo(() => {
     const query = searchQuery.trim().toLowerCase().replace(/\s+/g, '');
-    return FAQ_DATA.filter((item) => {
+    return faqItems.filter((item) => {
       if (selectedCategory !== '전체' && item.category !== selectedCategory) return false;
       if (!query) return true;
       const corpus = `${item.category} ${item.question} ${item.answerText}`.toLowerCase().replace(/\s+/g, '');
       return corpus.includes(query);
     });
-  }, [searchQuery, selectedCategory]);
+  }, [searchQuery, selectedCategory, faqItems]);
 
   const categoryCounts = useMemo(() => {
     const counts: Record<string, number> = { 전체: FAQ_DATA.length };
@@ -217,7 +223,7 @@ export default function FaqPage() {
                     <span className="min-w-0 flex-1">
                       <span className="mb-1 flex flex-wrap items-center gap-2">
                         <span className="rounded-md bg-slate-100 px-2 py-0.5 text-[11px] font-semibold text-slate-500">{item.category}</span>
-                        <span className="font-mono text-[11px] text-slate-500">{String(FAQ_DATA.indexOf(item) + 1).padStart(2, '0')}</span>
+                        <span className="font-mono text-[11px] text-slate-500">{String(FAQ_DATA.findIndex(original => original.id === item.id) + 1).padStart(2, '0')}</span>
                       </span>
                       <span className="block text-sm font-bold leading-6 text-slate-900 sm:text-base">{item.question}</span>
                     </span>

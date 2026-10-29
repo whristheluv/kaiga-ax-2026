@@ -1,3 +1,5 @@
+import { useSettlementRelease } from "@/hooks/useSettlementRelease";
+import { SETTLEMENT_RELEASE_NOTICE } from "@/lib/settlementRelease";
 import { FAQ_COUNT } from "@/data/faqData";
 import { useEffect, useState } from "react";
 import Header from "@/components/Header";
@@ -69,6 +71,7 @@ function SettlementDeadline() {
 }
 
 export default function GuideSettlementPage() {
+  const released = useSettlementRelease();
   const [activeSection, setActiveSection] = useState(
     GUIDE_DATA.sections[0]?.id || ""
   );
@@ -204,15 +207,21 @@ export default function GuideSettlementPage() {
               <p>
                 제출 기간: 2026년 11월 1일~15일 23:59(KST)
                 <br />
-                선정 차수에 맞는 링크로 정산 서류를 제출해 주세요.
+                {released ? "선정 차수에 맞는 링크로 정산 서류를 제출해 주세요." : "정산 제출 링크는 11월 1일 00:00(KST)에 공개됩니다."}
               </p>
               <div className="settlement-submission-links">
-                <a href="https://forms.gle/V4uHn3xdYFktGXQ89" target="_blank" rel="noopener noreferrer">
-                  1·2차 10월 정산 제출 <span>(새 창)</span>
-                </a>
-                <a href="https://forms.gle/eFwmiYZmQ4YYUUNZ9" target="_blank" rel="noopener noreferrer">
-                  3·4차 10월 정산 제출 <span>(새 창)</span>
-                </a>
+                {[
+                  { label: "1·2차 10월 정산 제출", url: "https://forms.gle/V4uHn3xdYFktGXQ89" },
+                  { label: "3·4차 10월 정산 제출", url: "https://forms.gle/eFwmiYZmQ4YYUUNZ9" },
+                ].map(({ label, url }) => released ? (
+                  <a key={label} href={url} target="_blank" rel="noopener noreferrer">
+                    {label} <span>(새 창)</span>
+                  </a>
+                ) : (
+                  <div key={label} className="settlement-submission-pending">
+                    {label} <span>{SETTLEMENT_RELEASE_NOTICE}</span>
+                  </div>
+                ))}
               </div>
               <details className="settlement-common-notice" open>
                 <summary>정산 서류 공통 공지</summary>
