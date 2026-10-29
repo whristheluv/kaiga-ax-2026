@@ -30,8 +30,8 @@ export const FAQ_DATA: FaqItem[] = [
     "numericId": "4-60",
     "category": "서류·증빙",
     "question": "10월 사용분 정산서류는 어디에 제출하나요?",
-    "answerHtml": "<div class=\"answer-text\"><p>10월 사용분 제출 기간은 <strong>2026년 11월 1일부터 15일 23:59(KST)까지</strong>입니다.</p><p>1·2차 기업: 제출 링크 준비 중<br/>3·4차 기업: 제출 링크 준비 중</p><p>10월 정산 제출 링크는 준비되는 대로 안내합니다.<br/>선정 차수에 맞는 접수처를 확인한 후 제출해 주세요.</p></div>",
-    "answerText": "10월 사용분 제출 기간은 2026년 11월 1일부터 15일 23:59(KST)까지입니다.\n\n1·2차 기업: 제출 링크 준비 중\n3·4차 기업: 제출 링크 준비 중\n\n10월 정산 제출 링크는 준비되는 대로 안내합니다.\n선정 차수에 맞는 접수처를 확인한 후 제출해 주세요."
+    "answerHtml": "<div class=\"answer-text\"><p>10월 사용분 제출 기간은 <strong>2026년 11월 1일부터 15일 23:59(KST)까지</strong>입니다.</p><p><a href=\"https://forms.gle/V4uHn3xdYFktGXQ89\" target=\"_blank\" rel=\"noopener noreferrer\">1·2차 기업 10월 정산 제출 (새 창)</a><br/><a href=\"https://forms.gle/eFwmiYZmQ4YYUUNZ9\" target=\"_blank\" rel=\"noopener noreferrer\">3·4차 기업 10월 정산 제출 (새 창)</a></p><p>선정 차수에 맞는 링크로 정산 서류를 제출해 주세요.</p></div>",
+    "answerText": "10월 사용분 제출 기간은 2026년 11월 1일부터 15일 23:59(KST)까지입니다.\n\n1·2차 기업 10월 정산 제출: https://forms.gle/V4uHn3xdYFktGXQ89\n3·4차 기업 10월 정산 제출: https://forms.gle/eFwmiYZmQ4YYUUNZ9\n\n선정 차수에 맞는 링크로 정산 서류를 제출해 주세요."
   },
   {
     "id": "q-7",

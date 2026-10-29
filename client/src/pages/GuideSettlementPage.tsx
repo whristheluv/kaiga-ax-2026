@@ -204,15 +204,15 @@ export default function GuideSettlementPage() {
               <p>
                 제출 기간: 2026년 11월 1일~15일 23:59(KST)
                 <br />
-                10월 정산 제출 링크는 준비되는 대로 안내합니다.
+                선정 차수에 맞는 링크로 정산 서류를 제출해 주세요.
               </p>
               <div className="settlement-submission-links">
-                <div className="settlement-submission-pending">
-                  1·2차 10월 정산 제출 <span>링크 준비 중</span>
-                </div>
-                <div className="settlement-submission-pending">
-                  3·4차 10월 정산 제출 <span>링크 준비 중</span>
-                </div>
+                <a href="https://forms.gle/V4uHn3xdYFktGXQ89" target="_blank" rel="noopener noreferrer">
+                  1·2차 10월 정산 제출 <span>(새 창)</span>
+                </a>
+                <a href="https://forms.gle/eFwmiYZmQ4YYUUNZ9" target="_blank" rel="noopener noreferrer">
+                  3·4차 10월 정산 제출 <span>(새 창)</span>
+                </a>
               </div>
               <details className="settlement-common-notice" open>
                 <summary>정산 서류 공통 공지</summary>
